@@ -26,7 +26,7 @@ define( 'DB_NAME', 'valvometal' );
 define( 'DB_USER', 'valvometal' );
 
 /** MySQL database password */
-define( 'DB_PASSWORD', 'oOP3y2pRaB3IqkAi' );
+define( 'DB_PASSWORD', 'TK8vNynB7Vj70e26' );
 
 /** MySQL hostname */
 define( 'DB_HOST', 'localhost' );
@@ -63,7 +63,7 @@ define('NONCE_SALT',       'JG.&6 NX^ gjwLo~,W%k.^t(NuTN{Pu4fI|KFM{&refio(n3z<^2
  */
 $table_prefix = 'vm';
 
-
+define('WP_DEBUG', true);
 
 
 /* That's all, stop editing! Happy blogging. */
