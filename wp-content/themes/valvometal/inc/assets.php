@@ -44,3 +44,18 @@ add_action('wp_enqueue_scripts', function () {
      */
     wp_enqueue_style('style', WP_THEME_URI . '/style.css', array(), $version);
 });
+
+add_action('after_setup_theme', function () {
+    add_image_size('half', 9876);
+});
+
+add_filter('image_resize_dimensions', function ($payload, $orig_w, $orig_h, $dest_w, $dest_h, $crop) {
+    if ($dest_w === 9876) {
+        $width = $orig_w / 2;
+        $height = $orig_h / 2;
+
+        return array(0, 0, 0, 0, $width, $height, $orig_w, $orig_h);
+    }
+
+    return $payload;
+}, 10, 6);
