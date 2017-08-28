@@ -1,0 +1,29 @@
+@import "~bootstrap/scss/variables";
+
+.navbar {
+  .nav-link {
+    font-family: $headings-font-family;
+    font-size: 0.8rem;
+    font-weight: $headings-font-weight;
+
+    text-transform: uppercase;
+  }
+}
+
+header {
+  max-width: 700px;
+
+  margin-top: 8%;
+  margin-left: auto;
+  margin-right: auto;
+
+  > * {
+    margin: 0 auto 7%;
+
+    text-align: center;
+  }
+
+  .home & {
+    color: $white;
+  }
+}
