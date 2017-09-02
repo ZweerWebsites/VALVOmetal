@@ -10,7 +10,7 @@ $productions = get_children([
 
 ?>
 
-<div class="container">
+<div class="container production-container">
     <div class="card-group">
         <?php
 
@@ -23,15 +23,23 @@ $productions = get_children([
             $title = implode(' ', $title);
 
         ?>
-            <!-- <?php var_dump($production) ?> -->
+            <!-- <?php #var_dump($production) ?> -->
             <div class="card card-production">
                 <div class="card-body">
+                    <h3><?= get_the_title($productionPage) ?></h3>
+
                     <h4 class="card-title">
                         <small><?= ++$index ?>.</small>
-                        <?= $title ?>
+                        <a href="<?= get_permalink($production) ?>"><?= $title ?></a>
                     </h4>
 
-                    <p class="card-text"><?= get_the_excerpt($production) ?></p>
+                    <p class="card-text">
+                        <a href="<?= get_permalink($production) ?>">
+                            <?= get_the_excerpt($production) ?>
+                        </a>
+                    </p>
+
+                    <a class="btn btn-primary" href="<?= get_permalink($production) ?>">&rightarrow;</a>
                 </div>
             </div>
         <?php } ?>

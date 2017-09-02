@@ -1,0 +1,56 @@
+@import "~bootstrap/scss/variables";
+
+.production-container {
+  .card {
+    border: 0;
+
+    &:first-child {
+      h3 {
+        visibility: visible;
+      }
+    }
+
+    &:nth-child(2n) {
+      background-color: #F4F4F4;
+    }
+
+    h3 {
+      visibility: hidden;
+
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+
+      font-size: .9rem;
+      text-transform: uppercase;
+
+      color: map-get($theme-colors, primary);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .card-body {
+      padding: 1.25rem 2rem;
+    }
+
+    .card-title {
+      small {
+        color: map-get($theme-colors, primary);
+      }
+    }
+
+    .card-text {
+      color: map_get($grays, 500);
+    }
+
+    .btn {
+      color: $white;
+
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+
+      padding: 9px 11px;
+    }
+  }
+}

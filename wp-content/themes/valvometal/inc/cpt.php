@@ -1,6 +1,8 @@
 <?php
 
 add_action('init', function () {
+    add_post_type_support('page', 'excerpt');
+
     register_post_type('news', [
         'label' =>  'News',
         'public' => true,
