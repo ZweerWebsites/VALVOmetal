@@ -13,4 +13,9 @@ add_action('init', function () {
         'publicly_queryable' => true,
         'show_in_nav_menus' => true,
     ]);
+
+    register_taxonomy('news_category', 'news', [
+        'label' => 'Categoria',
+        'hierarchical' => true,
+    ]);
 });

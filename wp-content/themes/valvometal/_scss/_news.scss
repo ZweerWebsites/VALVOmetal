@@ -1,0 +1,62 @@
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/breakpoints";
+
+.news-container {
+  background-color: map_get($theme-colors, primary);
+
+  .container {
+    position: relative;
+    z-index: 2;
+
+    @include media-breakpoint-up(lg) {
+      transform: translateY(-50%);
+    }
+  }
+
+  .card-group {
+    box-shadow: 0 20px 100px 0 rgba($black, .1);
+  }
+
+  .card {
+    background-color: $black;
+
+    height: 350px;
+
+    color: $white;
+
+    a {
+      color: $white;
+
+      &:hover {
+        color: map_get($grays, 300);
+
+        text-decoration: none;
+      }
+    }
+
+    small {
+      margin-top: .5rem;
+      margin-bottom: 2rem;
+
+      text-transform: uppercase;
+    }
+
+    time {
+      margin-bottom: .5rem;
+    }
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+
+    > * {
+      display: flex;
+      flex: 0 0 auto;
+    }
+
+    .card-title {
+      flex-grow: 1;
+    }
+  }
+}
