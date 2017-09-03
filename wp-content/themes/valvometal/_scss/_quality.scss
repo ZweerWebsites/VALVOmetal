@@ -1,0 +1,45 @@
+@import "~bootstrap/scss/variables";
+
+.quality-container {
+  background-color: $white;
+
+  .quality-jumbo {
+    width: 1000%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+    text-align: center;
+    color: map_get($grays, 100);
+
+    font-family: $headings-font-family;
+    font-size: 12rem;
+    font-weight: $font-weight-bold;
+
+    text-transform: uppercase;
+  }
+
+  .quality-title {
+    color: map_get($theme-colors, primary);
+
+    small {
+      font-family: $headings-font-family;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+
+      width: 60%;
+    }
+  }
+
+  .quality-text {
+    margin-top: 2rem;
+
+    .btn {
+      margin-top: 3rem;
+    }
+  }
+}

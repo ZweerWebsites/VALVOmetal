@@ -1,6 +1,7 @@
 <?php
 
 add_action('init', function () {
+    add_theme_support('post-thumbnails');
     add_post_type_support('page', 'excerpt');
 
     register_post_type('news', [

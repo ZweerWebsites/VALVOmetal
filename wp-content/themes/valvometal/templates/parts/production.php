@@ -10,38 +10,40 @@ $productions = get_children([
 
 ?>
 
-<div class="container production-container">
-    <div class="card-group">
-        <?php
+<div class="production-container">
+    <div class="container">
+        <div class="card-group">
+            <?php
 
-        $index = 0;
-        foreach ($productions as $production) {
-            $title = get_the_title($production);
+            $index = 0;
+            foreach ($productions as $production) {
+                $title = get_the_title($production);
 
-            $title = explode(' ', $title);
-            $title[0] = '<strong>' . $title[0] . '</strong>';
-            $title = implode(' ', $title);
+                $title = explode(' ', $title);
+                $title[0] = '<strong>' . $title[0] . '</strong>';
+                $title = implode(' ', $title);
 
-        ?>
-            <!-- <?php #var_dump($production) ?> -->
-            <div class="card card-production">
-                <div class="card-body">
-                    <h3><?= get_the_title($productionPage) ?></h3>
+                ?>
+                <!-- <?php #var_dump($production) ?> -->
+                <div class="card">
+                    <div class="card-body">
+                        <h3><?= get_the_title($productionPage) ?></h3>
 
-                    <h4 class="card-title">
-                        <small><?= ++$index ?>.</small>
-                        <a href="<?= get_permalink($production) ?>"><?= $title ?></a>
-                    </h4>
+                        <h4 class="card-title">
+                            <small><?= ++$index ?>.</small>
+                            <a href="<?= get_permalink($production) ?>"><?= $title ?></a>
+                        </h4>
 
-                    <p class="card-text">
-                        <a href="<?= get_permalink($production) ?>">
-                            <?= get_the_excerpt($production) ?>
-                        </a>
-                    </p>
+                        <p class="card-text">
+                            <a href="<?= get_permalink($production) ?>">
+                                <?= get_the_excerpt($production) ?>
+                            </a>
+                        </p>
 
-                    <a class="btn btn-primary" href="<?= get_permalink($production) ?>">&rightarrow;</a>
+                        <a class="btn btn-primary" href="<?= get_permalink($production) ?>">&rightarrow;</a>
+                    </div>
                 </div>
-            </div>
-        <?php } ?>
+            <?php } ?>
+        </div>
     </div>
 </div>
