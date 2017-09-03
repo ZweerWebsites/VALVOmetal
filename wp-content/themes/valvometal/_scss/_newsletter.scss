@@ -1,0 +1,69 @@
+@import "~bootstrap/scss/variables";
+
+.newsletter-container {
+  background-color: map_get($theme-colors, primary);
+
+  color: $white;
+
+  text-align: center;
+
+  margin-top: -70px;
+  padding-bottom: 100px;
+
+  small {
+    font-family: $headings-font-family;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    width: 35%;
+
+    margin: 1rem auto 4rem;
+  }
+
+  input {
+    border: 0;
+    border-bottom: 2px solid $white;
+
+    background: transparent;
+
+    text-align: center;
+    color: $white;
+
+    border-radius: 0;
+
+    &:focus {
+      border-color: $white;
+      background: transparent;
+      color: $white;
+    }
+
+    &::placeholder {
+      color: map_get($grays, 100);
+    }
+  }
+
+  .btn-light {
+    color: map_get($theme-colors, primary);
+
+    font-size: .8rem;
+  }
+
+  .mc4wp-form-fields {
+    .row {
+      &:first-child {
+        margin-bottom: 2rem;
+
+        .col {
+          margin-left: 0;
+          margin-right: 20%;
+
+          &:first-child {
+            margin-left: 20%;
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
