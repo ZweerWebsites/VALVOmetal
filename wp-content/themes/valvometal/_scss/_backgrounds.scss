@@ -1,0 +1,15 @@
+.backgrounds {
+  img {
+    position: absolute;
+    opacity: 0;
+
+    max-width: 100%;
+
+    transition: .8s;
+    z-index: -1;
+
+    &.active {
+      opacity: .5;
+    }
+  }
+}

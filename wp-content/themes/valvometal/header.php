@@ -7,6 +7,10 @@ get_header('html');
 $logoId = get_field('logo', 'option');
 $logoDarkId = get_field('logo_dark', 'option');
 
+if (is_front_page()) {
+    get_template_part('templates/parts/backgrounds');
+}
+
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
