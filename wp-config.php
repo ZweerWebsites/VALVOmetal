@@ -19,17 +19,33 @@
  */
 
 // ** MySQL settings ** //
-/** The name of the database for WordPress */
-define( 'DB_NAME', 'valvometal' );
+if ($_SERVER['SERVER_NAME'] === 'valvometal.loc') {
+    /** The name of the database for WordPress */
+    define( 'DB_NAME', 'valvometal' );
 
-/** MySQL database username */
-define( 'DB_USER', 'valvometal' );
+    /** MySQL database username */
+    define( 'DB_USER', 'valvometal' );
 
-/** MySQL database password */
-define( 'DB_PASSWORD', 'TK8vNynB7Vj70e26' );
+    /** MySQL database password */
+    define( 'DB_PASSWORD', 'TK8vNynB7Vj70e26' );
 
-/** MySQL hostname */
-define( 'DB_HOST', 'localhost' );
+    /** MySQL hostname */
+    define( 'DB_HOST', 'localhost' );
+} else {
+    /** The name of the database for WordPress */
+    define( 'DB_NAME', 'id2807975_valvometal' );
+
+    /** MySQL database username */
+    define( 'DB_USER', 'id2807975_valvometal' );
+
+    /** MySQL database password */
+    define( 'DB_PASSWORD', 'TK8vNynB7Vj70e26' );
+
+    /** MySQL hostname */
+    define( 'DB_HOST', 'localhost' );
+
+}
+
 
 /** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
