@@ -9,3 +9,7 @@ add_action('init', function () {
         acf_add_options_page('Opzioni Tema');
     }
 });
+
+add_filter('acf/settings/google_api_key', function () {
+    return 'AIzaSyBIoucieAKgbkvhY-lVbdXyP7AScuceTn0';
+});
