@@ -27,10 +27,10 @@
             "mime_types": ""
         },
         {
-            "key": "field_59ac39aa9ed8f",
-            "label": "Statistiche Clienti",
+            "key": "field_59aeec886a5e8",
+            "label": "Statistiche",
             "name": "stats",
-            "type": "group",
+            "type": "repeater",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -39,13 +39,17 @@
                 "class": "",
                 "id": ""
             },
+            "collapsed": "",
+            "min": 3,
+            "max": 3,
             "layout": "table",
+            "button_label": "",
             "sub_fields": [
                 {
-                    "key": "field_59ac39bb9ed90",
-                    "label": "Statistica 1",
-                    "name": "stat_1",
-                    "type": "number",
+                    "key": "field_59aeeca3654c4",
+                    "label": "Testo",
+                    "name": "text",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -58,35 +62,12 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "min": "",
-                    "max": "",
-                    "step": ""
+                    "maxlength": ""
                 },
                 {
-                    "key": "field_59ac39c79ed91",
-                    "label": "Statistica 2",
-                    "name": "stat_2",
-                    "type": "number",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "min": "",
-                    "max": "",
-                    "step": ""
-                },
-                {
-                    "key": "field_59ac39cd9ed92",
-                    "label": "Statistica 3",
-                    "name": "stat_3",
+                    "key": "field_59aeecb0654c5",
+                    "label": "Valore",
+                    "name": "value",
                     "type": "number",
                     "instructions": "",
                     "required": 0,
@@ -124,5 +105,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1504462960
+    "modified": 1504636089
 }
