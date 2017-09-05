@@ -3,6 +3,18 @@
 .customers-container {
   transform: translateY(-50%);
 
+  .card-group {
+    box-shadow: 0 20px 100px 0 rgba($black, .1);
+  }
+
+  .card {
+    border: 0;
+
+    &:nth-child(2n) {
+      background-color: map_get($grays, 100);
+    }
+  }
+
   .card-title {
     font-family: $headings-font-family;
     font-size: 1.5rem;

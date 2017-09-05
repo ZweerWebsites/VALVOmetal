@@ -1,0 +1,41 @@
+@import "~bootstrap/scss/variables";
+
+.contacts-container {
+  background-color: $white;
+  margin-top: -320px;
+  padding-top: 260px;
+  padding-bottom: 100px;
+
+  > .container {
+    > .row {
+      > :first-child {
+        border-right: 1px dotted map_get($grays, 400);
+        margin-right: 2rem;
+      }
+    }
+  }
+
+  h3 {
+    color: map_get($theme-colors, primary);
+    font-size: .9rem;
+    text-transform: uppercase;
+
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    a {
+      color: map_get($grays, 500);
+
+      &:hover {
+        color: map_get($grays, 700);
+      }
+    }
+  }
+
+  p {
+    color: map_get($theme-colors, primary);
+
+    margin-bottom: 2rem;
+  }
+}
