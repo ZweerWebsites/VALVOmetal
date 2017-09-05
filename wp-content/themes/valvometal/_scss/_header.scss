@@ -1,6 +1,18 @@
 @import "~bootstrap/scss/variables";
 
 .navbar {
+  &.navbar-hidden {
+    opacity: 0;
+    transition: .8s;
+
+    transform: translateY(-120px);
+
+    &.navbar-hidden-visible {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
   .nav-link {
     font-family: $headings-font-family;
     font-size: 0.8rem;

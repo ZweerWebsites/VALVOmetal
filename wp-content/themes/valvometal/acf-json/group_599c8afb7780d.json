@@ -27,6 +27,30 @@
             "mime_types": ""
         },
         {
+            "key": "field_59af1c485fa06",
+            "label": "Logo scuro",
+            "name": "logo_dark",
+            "type": "image",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "full",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
             "key": "field_59aeec886a5e8",
             "label": "Statistiche",
             "name": "stats",
@@ -105,5 +129,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1504636089
+    "modified": 1504648339
 }
