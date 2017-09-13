@@ -2,6 +2,11 @@
 
 .navbar {
   &.navbar-hidden {
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    box-shadow: 0 0 30px rgba($black, .07);
+
     opacity: 0;
     transition: .8s;
 
@@ -10,6 +15,12 @@
     &.navbar-hidden-visible {
       opacity: 1;
       transform: none;
+    }
+
+    .navbar-brand {
+      img {
+        height: 40px;
+      }
     }
   }
 
@@ -35,5 +46,9 @@ header {
 
   .home & {
     color: $white;
+  }
+
+  p {
+    font-size: 1.3rem;
   }
 }

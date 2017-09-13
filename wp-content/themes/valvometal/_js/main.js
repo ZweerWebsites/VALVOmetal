@@ -1,6 +1,10 @@
 import 'bootstrap';
 import $ from 'jquery';
 
+Modernizr.addTest('safari', function() {
+  return navigator.userAgent.indexOf('Safari') !== -1 && navigator.userAgent.indexOf('Chrome') === -1;
+});
+
 $(() => {
   const threshold = 400;
   const class2add = 'navbar-hidden-visible';

@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const WebpackCleanupPlugin = require('webpack-cleanup-plugin');
+const ModernizrPlugin = require('modernizr-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -79,5 +80,13 @@ module.exports = {
     new ExtractTextPlugin('[name].css'),
     new WebpackCleanupPlugin(),
     new webpack.optimize.UglifyJsPlugin({ minimize: true }),
+    new ModernizrPlugin({
+      minify: true,
+      options: [
+        'addTest',
+        'setClasses',
+      ],
+      'feature-detects': [],
+    }),
   ],
 };

@@ -8,6 +8,10 @@ $font-weight-base: 300;
 $font-weight-normal: $font-weight-base;
 $font-weight-bold: 700;
 
+$h1-font-size: 2.6rem;
+$h2-font-size: 2rem;
+$h3-font-size: 1.8rem;
+
 $headings-font-weight: $font-weight-base;
 $headings-font-family: 'Brother.1816', sans-serif;
 $font-family-sans-serif: 'Source Sans Pro', sans-serif;
@@ -22,5 +26,9 @@ $navbar-padding-x: 40px;
 $navbar-dark-color: #FFF;
 $navbar-dark-hover-color: #FFF;
 $nav-link-padding-x: 14px !important;
+
+$navbar-light-color: #4A4A4A;
+$navbar-light-hover-color: $blue;
+$navbar-light-active-color: $blue;
 
 // VALVOmetal

@@ -44,7 +44,7 @@ if (is_front_page()) {
         'menu' => 'main-menu',
         'container' => 'div',
         'container_id' => 'navbarNavAltMarkup',
-        'container_class' => 'collapse navbar-collapse align-self-start',
+        'container_class' => 'collapse navbar-collapse align-self-center',
         'menu_class' => 'navbar-nav ml-auto',
         'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback',
         'walker' => new WP_Bootstrap_Navwalker(),

@@ -28,6 +28,8 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('manifest', WP_THEME_URI . '/dist/manifest.js', array(), $version, true );
     wp_enqueue_script('vendor', WP_THEME_URI . '/dist/vendor.js', array(), $version, true );
     wp_enqueue_script('main', WP_THEME_URI . '/dist/main.js', array(), $version, true );
+    wp_enqueue_script('modernizr', WP_THEME_URI . '/dist/modernizr-bundle.js', array(), $version, false );
+
     wp_enqueue_style('main', WP_THEME_URI . '/dist/main.css', array(), $version );
 
     /**
