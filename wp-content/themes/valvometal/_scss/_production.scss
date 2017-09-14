@@ -6,23 +6,60 @@
 
   margin-bottom: -150px;
 
-  background-color: $white;
+  .home & {
+    background-color: $white;
+  }
 
   .container {
     position: relative;
     z-index: 2;
 
     @include media-breakpoint-up(lg) {
-      transform: translateY(-50%);
+      .home & {
+        transform: translateY(-50%);
+      }
+
+      transform: translateY(-100%);
     }
   }
 
   .card-group {
-    box-shadow: 0 20px 100px 0 rgba($black, .1);
+    .home & {
+      box-shadow: 0 20px 100px 0 rgba($black, .1);
+    }
   }
 
   .card {
     border: 0;
+    background-color: transparent;
+    color: $white;
+
+    text-align: center;
+
+    border-left: 1px dotted rgba($white, .2) !important;
+    &:first-child {
+      border-left: 0 !important;
+    }
+
+    border-bottom: 4px solid rgba(map_get($theme-colors, primary), .3);
+    &:nth-child(2n) {
+      border-bottom-color: rgba(map_get($theme-colors, primary), .8);
+    }
+
+    .home & {
+      color: $body-color;
+
+      text-align: left;
+
+      border-left: 0 !important;
+      border-bottom: 0;
+    }
+
+    &:hover {
+      small {
+        opacity: 1;
+      }
+    }
 
     flex: 0 0 100%;
     @include media-breakpoint-up(sm) {
@@ -38,8 +75,12 @@
       }
     }
 
-    &:nth-child(2n) {
-      background-color: map_get($grays, 100);
+    .home & {
+      background-color: $white;
+
+      &:nth-child(2n) {
+        background-color: map_get($grays, 100);
+      }
     }
 
     h3 {
@@ -59,8 +100,33 @@
     }
 
     .card-title {
+      margin-top: 2rem;
+
+      .home & {
+        margin-top: 0;
+      }
+
       small {
-        color: map_get($theme-colors, primary);
+        .home & {
+          color: map_get($theme-colors, primary);
+
+          &:after {
+            content: ".";
+          }
+        }
+
+        .page-template-products & {
+          position: absolute;
+          top: 0;
+          left: 20px;
+
+          font-family: $font-family-base;
+          font-size: 5rem;
+          font-weight: 100;
+
+          opacity: .3;
+          transition: 2s linear;
+        }
       }
     }
 

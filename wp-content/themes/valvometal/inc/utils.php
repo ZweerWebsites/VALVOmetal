@@ -39,3 +39,37 @@ function the_retina_image($attachmentId, $attrs = []) {
 
     echo $html;
 }
+
+/**
+ * @param integer|WP_Post $postId
+ * @param string $menu
+ * @return WP_Post[]
+ */
+function get_the_breadcrumb($menu, $postId = null) {
+    if (!$postId) {
+        $postId = get_the_ID();
+    }
+
+    $breadcrumb = [[
+        'title' => 'Home',
+        'url' => get_home_url(),
+    ]];
+    $menuPages = wp_get_nav_menu_items($menu);
+
+    do {
+        foreach ($menuPages as $menuPage) {
+            if ($menuPage->object_id === (string)$postId) {
+                array_unshift($breadcrumb, [
+                    'title' => $menuPage->title,
+                    'url' => $menuPage->url,
+                ]);
+
+                $postId = $menuPage->menu_parent_id;
+
+                break;
+            }
+        }
+    } while ($postId === '0');
+
+    return array_reverse($breadcrumb);
+}

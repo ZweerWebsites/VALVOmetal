@@ -44,11 +44,26 @@ header {
     text-align: center;
   }
 
-  .home & {
+  &.header-light {
     color: $white;
   }
 
   p {
     font-size: 1.3rem;
+  }
+
+  .breadcrumb {
+    margin-top: -4rem;
+  }
+
+  .breadcrumb-item {
+    float: none;
+    display: inline;
+
+    font-size: .9rem;
+
+    a {
+      color: $breadcrumb-active-color;
+    }
   }
 }

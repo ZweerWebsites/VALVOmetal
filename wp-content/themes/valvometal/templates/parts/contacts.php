@@ -4,7 +4,7 @@ $contactsPage = get_page_by_path('contact');
 
 $menuPages = wp_get_nav_menu_items('main-menu');
 
-$productionPage = get_page_by_path('production');
+$productionPage = get_page_by_path('main-products');
 $productions = get_children([
     'post_type' => 'page',
     'post_parent' => $productionPage->ID,

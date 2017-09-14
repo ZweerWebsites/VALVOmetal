@@ -7,7 +7,11 @@ get_header('html');
 $logoId = get_field('logo', 'option');
 $logoDarkId = get_field('logo_dark', 'option');
 
-if (is_front_page()) {
+$backgrounds = get_field('backgrounds');
+$headerClass = '';
+
+if ($backgrounds) {
+    $headerClass = 'header-light';
     get_template_part('templates/parts/backgrounds');
 }
 
@@ -51,11 +55,27 @@ if (is_front_page()) {
     ]) ?>
 </nav>
 
-<header>
-    <h1><?= get_bloginfo('name') ?></h1>
-    <p><?= get_bloginfo('description') ?></p>
+<header class="<?= $headerClass ?>">
+    <?php if (is_front_page()) : ?>
+        <h1><?= get_bloginfo('name') ?></h1>
+        <p><?= get_bloginfo('description') ?></p>
 
-    <div>
-        <a class="btn btn-primary" href="/">Lorem ipsum</a>
-    </div>
+        <div>
+            <a class="btn btn-primary" href="/">Lorem ipsum</a>
+        </div>
+    <?php else : ?>
+        <ol class="breadcrumb">
+            <?php $breadcrumbs = get_the_breadcrumb('main-menu') ?>
+            <?php foreach ($breadcrumbs as $index => $page) : ?>
+                <?php $isActive = $index === count($breadcrumbs) - 1 ?>
+                <li class="breadcrumb-item <?= $isActive ? 'active' : '' ?>">
+                    <?php if (!$isActive) : ?><a href="<?= $page['url'] ?>"><?php endif ?>
+                        <?= $page['title'] ?>
+                    <?php if (!$isActive) : ?></a><?php endif ?>
+                </li>
+            <?php endforeach ?>
+        </ol>
+
+        <h1><?= get_the_title() ?></h1>
+    <?php endif ?>
 </header>

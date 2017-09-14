@@ -40,9 +40,10 @@ $(() => {
       if (index === $images.length) {
         index = 0;
       }
+
+      setTimeout(advanceBackground, delay);
     }
 
     advanceBackground();
-    setInterval(advanceBackground, delay);
   }
 });
