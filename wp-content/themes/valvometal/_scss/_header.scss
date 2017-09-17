@@ -37,6 +37,9 @@ header {
   max-width: 700px;
 
   margin: 8% auto 300px;
+  .page-template-products & {
+    margin-bottom: 350px;
+  }
 
   > * {
     margin: 0 auto 7%;

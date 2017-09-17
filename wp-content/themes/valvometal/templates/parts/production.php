@@ -1,12 +1,7 @@
 <?php
 
 $productionPage = get_page_by_path('main-products');
-$productions = get_children([
-    'post_type' => 'page',
-    'post_parent' => $productionPage->ID,
-    'orderby' => 'menu_order',
-    'order' => 'ASC',
-]);
+$menuPages = wp_get_nav_menu_items('main-menu');
 
 ?>
 
@@ -16,8 +11,12 @@ $productions = get_children([
             <?php
 
             $index = 0;
-            foreach ($productions as $production) {
-                $title = get_the_title($production);
+            foreach ($menuPages as $menuPage) {
+                if ($menuPage->post_parent !== $productionPage->ID) {
+                    continue;
+                }
+
+                $title = $menuPage->title;
 
                 $title = explode(' ', $title);
                 $title[0] = '<strong>' . $title[0] . '</strong>';
@@ -32,25 +31,25 @@ $productions = get_children([
 
                         <?php if (!is_front_page()) : ?>
                             <figure>
-                                <?php the_retina_image(get_post_thumbnail_id($production), ['class' => 'mx-auto d-block img-fluid']) ?>
+                                <?php the_retina_image(get_post_thumbnail_id($menuPage->object_id), ['class' => 'mx-auto d-block img-fluid']) ?>
                             </figure>
                         <?php endif ?>
 
                         <h4 class="card-title">
                             <small><?= ++$index ?></small>
 
-                            <a href="<?= get_permalink($production) ?>"><?= $title ?></a>
+                            <a href="<?= $menuPage->url ?>"><?= $title ?></a>
                         </h4>
 
                         <?php if (is_front_page()) : ?>
                             <p class="card-text">
-                                <a href="<?= get_permalink($production) ?>">
-                                    <?= get_the_excerpt($production) ?>
+                                <a href="<?= $menuPage->url ?>">
+                                    <?= get_the_excerpt($menuPage->object_id) ?>
                                 </a>
                             </p>
                         <?php endif ?>
 
-                        <a class="btn btn-primary" href="<?= get_permalink($production) ?>">&rightarrow;</a>
+                        <a class="btn btn-primary" href="<?= $menuPage->url ?>">&rightarrow;</a>
                     </div>
                 </div>
             <?php } ?>

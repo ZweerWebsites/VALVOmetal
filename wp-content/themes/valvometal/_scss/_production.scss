@@ -15,11 +15,7 @@
     z-index: 2;
 
     @include media-breakpoint-up(lg) {
-      .home & {
-        transform: translateY(-50%);
-      }
-
-      transform: translateY(-100%);
+      transform: translateY(-50%);
     }
   }
 
@@ -57,7 +53,7 @@
 
     &:hover {
       small {
-        opacity: 1;
+        opacity: 1 !important;
       }
     }
 
@@ -125,7 +121,7 @@
           font-weight: 100;
 
           opacity: .3;
-          transition: 2s linear;
+          transition: .5s linear;
         }
       }
     }

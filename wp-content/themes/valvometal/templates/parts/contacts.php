@@ -1,16 +1,9 @@
 <?php
 
 $contactsPage = get_page_by_path('contact');
+$productionPage = get_page_by_path('main-products');
 
 $menuPages = wp_get_nav_menu_items('main-menu');
-
-$productionPage = get_page_by_path('main-products');
-$productions = get_children([
-    'post_type' => 'page',
-    'post_parent' => $productionPage->ID,
-    'orderby' => 'menu_order',
-    'order' => 'ASC',
-]);
 
 ?>
 
@@ -35,8 +28,9 @@ $productions = get_children([
                         <h3><strong><?= get_the_title($productionPage) ?></strong></h3>
 
                         <ul class="list-unstyled">
-                            <?php foreach ($productions as $production) : ?>
-                            <li><a href="<?= get_permalink($production) ?>"><?= get_the_title($production) ?></a></li>
+                            <?php foreach ($menuPages as $menuPage) : ?>
+                                <?php if ($menuPage->post_parent !== $productionPage->ID) continue ?>
+                                <li><a href="<?= $menuPage->url ?>"><?= $menuPage->title ?></a></li>
                             <?php endforeach ?>
                         </ul>
                     </div>

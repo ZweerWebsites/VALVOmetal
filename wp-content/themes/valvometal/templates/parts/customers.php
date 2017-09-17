@@ -1,6 +1,6 @@
 <?php
 
-$customersPage = get_page_by_path('customers');
+$customersPage = get_page_by_path('references');
 
 $customers = get_field('customers', $customersPage);
 $customers = array_slice($customers, 0, 2);

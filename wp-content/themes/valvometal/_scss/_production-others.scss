@@ -1,0 +1,43 @@
+@import "~bootstrap/scss/variables";
+
+.production-others-container {
+  margin-top: -280px;
+  position: relative;
+  z-index: 3;
+
+  h2 {
+    text-align: center;
+
+    font-size: 2.8rem;
+    color: map_get($theme-colors, primary);
+
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+
+    color: map_get($grays, 700);
+  }
+
+  p {
+    color: map_get($grays, 500);
+    margin-bottom: 2rem;
+  }
+
+  a {
+    font-size: .9rem;
+    font-weight: 500;
+  }
+
+  .row + .row {
+    position: relative;
+    z-index: 3;
+
+    .col-6 + .col-6 {
+      background-color: $white;
+    }
+  }
+}

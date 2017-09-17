@@ -9,6 +9,10 @@
 
   margin-top: -70px;
   padding-bottom: 100px;
+  .production-others-container + & {
+    margin-top: -130px;
+    padding-top: 250px;
+  }
 
   small {
     font-family: $headings-font-family;
