@@ -8,18 +8,17 @@ $logoId = get_field('logo', 'option');
 $logoDarkId = get_field('logo_dark', 'option');
 
 $backgrounds = get_field('backgrounds');
-$headerClass = '';
+$isLightBackground = get_field('light_background');
 
 if ($backgrounds) {
-    $headerClass = 'header-light';
     get_template_part('templates/parts/backgrounds');
 }
 
 ?>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
-    <a class="navbar-brand" href="<?php get_permalink(get_page_by_path('homepage')) ?>">
-        <?php the_retina_image($logoId) ?>
+<nav class="navbar navbar-expand-lg <?= $isLightBackground ? 'navbar-light' : 'navbar-dark' ?> bg-transparent">
+    <a class="navbar-brand" href="<?= get_home_url() ?>">
+        <?php the_retina_image($isLightBackground ? $logoDarkId : $logoId) ?>
     </a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,7 +36,7 @@ if ($backgrounds) {
 </nav>
 
 <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white navbar-hidden">
-    <a class="navbar-brand" href="<?php get_permalink(get_page_by_path('homepage')) ?>">
+    <a class="navbar-brand" href="<?= get_home_url() ?>">
         <?php the_retina_image($logoDarkId) ?>
     </a>
 
@@ -55,7 +54,7 @@ if ($backgrounds) {
     ]) ?>
 </nav>
 
-<header class="<?= $headerClass ?>">
+<header>
     <?php if (is_front_page()) : ?>
         <h1><?= get_bloginfo('name') ?></h1>
         <p><?= get_bloginfo('description') ?></p>
@@ -77,5 +76,6 @@ if ($backgrounds) {
         </ol>
 
         <h1><?= get_the_title() ?></h1>
+        <?php the_content() ?>
     <?php endif ?>
 </header>

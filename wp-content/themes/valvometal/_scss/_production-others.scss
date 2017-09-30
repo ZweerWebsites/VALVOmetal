@@ -36,8 +36,16 @@
     position: relative;
     z-index: 3;
 
-    .col-6 + .col-6 {
-      background-color: $white;
+    .col-6 {
+      &:first-child {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      + .col-6 {
+        background-color: map_get($grays, 100);
+        padding: 2.5rem;
+      }
     }
   }
 }

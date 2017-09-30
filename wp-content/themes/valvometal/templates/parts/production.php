@@ -1,5 +1,7 @@
 <?php
 
+$thisPage = get_post();
+
 $productionPage = get_page_by_path('main-products');
 $menuPages = wp_get_nav_menu_items('main-menu');
 
@@ -25,11 +27,11 @@ $menuPages = wp_get_nav_menu_items('main-menu');
                 ?>
                 <div class="card">
                     <div class="card-body">
-                        <?php if (is_front_page()) : ?>
+                        <?php if ($productionPage->ID !== $thisPage->ID) : ?>
                             <h3><?= get_the_title($productionPage) ?></h3>
                         <?php endif ?>
 
-                        <?php if (!is_front_page()) : ?>
+                        <?php if ($productionPage->ID === $thisPage->ID) : ?>
                             <figure>
                                 <?php the_retina_image(get_post_thumbnail_id($menuPage->object_id), ['class' => 'mx-auto d-block img-fluid']) ?>
                             </figure>
@@ -41,7 +43,7 @@ $menuPages = wp_get_nav_menu_items('main-menu');
                             <a href="<?= $menuPage->url ?>"><?= $title ?></a>
                         </h4>
 
-                        <?php if (is_front_page()) : ?>
+                        <?php if ($productionPage->ID !== $thisPage->ID) : ?>
                             <p class="card-text">
                                 <a href="<?= $menuPage->url ?>">
                                     <?= get_the_excerpt($menuPage->object_id) ?>

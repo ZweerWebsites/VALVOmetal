@@ -1,3 +1,11 @@
+@import "~bootstrap/scss/variables";
+
+body {
+  &.page-template-customers {
+    background-color: $white;
+  }
+}
+
 a {
   &:hover {
     text-decoration: none;

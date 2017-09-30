@@ -6,6 +6,21 @@
 
   background: bottom no-repeat;
 
+  .page-template-customers & {
+    margin-top: -310px;
+
+    padding-top: 0;
+    padding-bottom: 200px;
+
+    background: none !important;
+  }
+
+  .row {
+    .page-template-customers & {
+      justify-content: center;
+    }
+  }
+
   .card {
     position: relative;
     background: none;
@@ -14,6 +29,15 @@
     text-align: center;
 
     color: $white;
+    .page-template-customers & {
+      color: map_get($grays, 700);
+    }
+
+    &:first-child {
+      &:after {
+        border-left: 0 !important;
+      }
+    }
 
     &:after {
       content: "";
@@ -21,9 +45,12 @@
 
       top: 67px;
       bottom: 35px;
-      right: 0;
+      left: 0;
 
       border-left: 1px dotted map_get($grays, 100);
+      .page-template-customers & {
+        border-left: 1px solid map_get($theme-colors, primary);
+      }
     }
   }
 

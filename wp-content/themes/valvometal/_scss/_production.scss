@@ -6,8 +6,14 @@
 
   margin-bottom: -150px;
 
-  .home & {
-    background-color: $white;
+  background-color: $white;
+
+  .page-template-products & {
+    background-color: transparent;
+  }
+  .page-template-customers & {
+    margin-bottom: -50px;
+    background-color: map_get($theme-colors, primary);
   }
 
   .container {
@@ -20,35 +26,38 @@
   }
 
   .card-group {
-    .home & {
-      box-shadow: 0 20px 100px 0 rgba($black, .1);
+    box-shadow: 0 20px 100px 0 rgba($black, .1);
+    .page-template-products & {
+      box-shadow: none;
     }
   }
 
   .card {
     border: 0;
-    background-color: transparent;
-    color: $white;
+    background-color: $white;
+    color: $body-color;
 
-    text-align: center;
+    text-align: left;
 
-    border-left: 1px dotted rgba($white, .2) !important;
-    &:first-child {
-      border-left: 0 !important;
-    }
-
-    border-bottom: 4px solid rgba(map_get($theme-colors, primary), .3);
     &:nth-child(2n) {
-      border-bottom-color: rgba(map_get($theme-colors, primary), .8);
+      background-color: map_get($grays, 100);
     }
 
-    .home & {
-      color: $body-color;
+    .page-template-products & {
+      background-color: transparent !important;
+      color: $white;
 
-      text-align: left;
+      text-align: center;
 
-      border-left: 0 !important;
-      border-bottom: 0;
+      border-left: 1px dotted rgba($white, .2) !important;
+      &:first-child {
+        border-left: 0 !important;
+      }
+
+      border-bottom: 4px solid rgba(map_get($theme-colors, primary), .3);
+      &:nth-child(2n) {
+        border-bottom-color: rgba(map_get($theme-colors, primary), .8);
+      }
     }
 
     &:hover {
@@ -71,14 +80,6 @@
       }
     }
 
-    .home & {
-      background-color: $white;
-
-      &:nth-child(2n) {
-        background-color: map_get($grays, 100);
-      }
-    }
-
     h3 {
       visibility: hidden;
 
@@ -96,22 +97,25 @@
     }
 
     .card-title {
-      margin-top: 2rem;
+      margin-top: 0;
 
-      .home & {
-        margin-top: 0;
+      .page-template-products & {
+        margin-top: 2rem;
       }
 
       small {
-        .home & {
-          color: map_get($theme-colors, primary);
+        color: map_get($theme-colors, primary);
 
-          &:after {
-            content: ".";
-          }
+        &:after {
+          content: ".";
         }
 
         .page-template-products & {
+          color: inherit;
+          &:after {
+            content: "";
+          }
+
           position: absolute;
           top: 0;
           left: 20px;
