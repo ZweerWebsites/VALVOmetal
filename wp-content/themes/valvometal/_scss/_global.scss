@@ -1,7 +1,9 @@
 @import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/breakpoints";
 
 body {
-  &.page-template-customers {
+  &.page-template-customers,
+  &.page-template-news {
     background-color: $white;
   }
 }

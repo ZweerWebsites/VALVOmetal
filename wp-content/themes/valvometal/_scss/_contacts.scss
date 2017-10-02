@@ -1,7 +1,7 @@
 @import "~bootstrap/scss/variables";
 
 .contacts-container {
-  background-color: $white;
+  background-color: map_get($grays, 100);
   margin-top: -320px;
   padding-top: 260px;
   .spacer + & {
