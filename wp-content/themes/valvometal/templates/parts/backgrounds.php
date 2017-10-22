@@ -2,6 +2,12 @@
 
 $backgrounds = get_field('backgrounds');
 
+if (!$backgrounds || count($backgrounds) === 0) {
+    $backgrounds = [
+        ['image' => get_post_thumbnail_id()],
+    ];
+}
+
 ?>
 
 <div class="backgrounds">

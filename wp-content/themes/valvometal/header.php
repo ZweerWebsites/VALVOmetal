@@ -10,7 +10,7 @@ $logoDarkId = get_field('logo_dark', 'option');
 $backgrounds = get_field('backgrounds');
 $isLightBackground = get_field('light_background');
 
-if ($backgrounds) {
+if ($backgrounds || get_the_post_thumbnail_url()) {
     get_template_part('templates/parts/backgrounds');
 }
 

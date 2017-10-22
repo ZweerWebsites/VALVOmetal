@@ -14,11 +14,17 @@ $news = get_posts([
             <?php foreach ($news as $new) : ?>
                 <div class="card">
                     <?php if ($attachmentId = get_post_thumbnail_id($new)) : ?>
-                        <?php the_retina_image($attachmentId, ['class' => 'card-img-top', 'alt' => get_the_title($new)]) ?>
+                        <a href="<?= get_permalink($new) ?>">
+                            <?php the_retina_image($attachmentId, ['class' => 'card-img-top', 'alt' => get_the_title($new)]) ?>
+                        </a>
                     <?php endif ?>
 
                     <div class="card-body">
-                        <h4 class="card-title"><?= get_the_title($new) ?></h4>
+                        <h4 class="card-title">
+                            <a href="<?= get_permalink($new) ?>">
+                                <?= get_the_title($new) ?>
+                            </a>
+                        </h4>
                     </div>
                 </div>
             <?php endforeach ?>

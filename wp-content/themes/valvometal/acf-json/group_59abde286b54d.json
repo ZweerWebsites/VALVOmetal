@@ -20,6 +20,89 @@
             "ui": 0,
             "ui_on_text": "",
             "ui_off_text": ""
+        },
+        {
+            "key": "field_59ecd9445b47d",
+            "label": "Corpo della news",
+            "name": "body",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "59ecd95802da3": {
+                    "key": "59ecd95802da3",
+                    "name": "text",
+                    "label": "Testo",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_59ecd96f5b47e",
+                            "label": "Testo",
+                            "name": "text",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "basic",
+                            "media_upload": 0,
+                            "delay": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "59ecd98d5b47f": {
+                    "key": "59ecd98d5b47f",
+                    "name": "images",
+                    "label": "Galleria di immagini",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_59ecd99d5b480",
+                            "label": "Immagini",
+                            "name": "images",
+                            "type": "gallery",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "min": "",
+                            "max": "",
+                            "insert": "append",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "button_label": "Aggiungi Riga",
+            "min": "",
+            "max": ""
         }
     ],
     "location": [
@@ -36,8 +119,10 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "the_content"
+    ],
     "active": 1,
     "description": "",
-    "modified": 1504435809
+    "modified": 1508694478
 }

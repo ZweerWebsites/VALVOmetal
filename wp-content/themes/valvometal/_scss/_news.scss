@@ -34,6 +34,15 @@
       }
     }
 
+    .prev-next {
+      display: block;
+      margin-bottom: 2rem;
+
+      &.next {
+        text-align: right;
+      }
+    }
+
     small {
       margin-top: .5rem;
       margin-bottom: 2rem;

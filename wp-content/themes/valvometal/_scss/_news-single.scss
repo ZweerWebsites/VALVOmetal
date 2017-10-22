@@ -1,0 +1,36 @@
+@import "~bootstrap/scss/variables";
+
+.news-single-container {
+  background-color: $white;
+
+  .news-meta {
+    color: map_get($theme-colors, primary);
+    font-size: .9rem;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .news-content-single {
+    font-size: .8rem;
+    margin-bottom: 2rem;
+
+    &:first-child {
+      font-size: 1rem;
+    }
+  }
+
+  .img-thumbnail {
+    padding: 5px;
+    background-color: map_get($grays, 200);
+
+    border: 10px solid $white;
+    border-radius: 0;
+  }
+
+  + .spacer {
+    background-color: $white;
+  }
+}
