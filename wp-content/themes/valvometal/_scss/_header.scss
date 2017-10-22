@@ -37,7 +37,8 @@ header {
   max-width: 700px;
   color: $white;
   .page-template-customers &,
-  .page-template-news & {
+  .page-template-news &,
+  .page-template-contacts & {
     color: map_get($theme-colors, primary);
   }
 

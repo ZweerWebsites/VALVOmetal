@@ -1,6 +1,17 @@
 import $ from 'jquery';
 
-window.initMap = function initMap() {
+const zoom = 4;
+const center = {
+  lat: 45.916536,
+  lng: 8.332341,
+};
+const styles = [{"elementType":"geometry","stylers":[{"color":"#f5f5f5"}]},{"elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"elementType":"labels.text.fill","stylers":[{"color":"#616161"}]},{"elementType":"labels.text.stroke","stylers":[{"color":"#f5f5f5"}]},{"featureType":"administrative.land_parcel","elementType":"labels.text.fill","stylers":[{"color":"#bdbdbd"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#eeeeee"}]},{"featureType":"poi","elementType":"labels.text.fill","stylers":[{"color":"#757575"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#e5e5e5"}]},{"featureType":"poi.park","elementType":"labels.text.fill","stylers":[{"color":"#9e9e9e"}]},{"featureType":"road","elementType":"geometry","stylers":[{"color":"#ffffff"}]},{"featureType":"road.arterial","elementType":"labels.text.fill","stylers":[{"color":"#757575"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"color":"#dadada"}]},{"featureType":"road.highway","elementType":"labels.text.fill","stylers":[{"color":"#616161"}]},{"featureType":"road.local","elementType":"labels.text.fill","stylers":[{"color":"#9e9e9e"}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"color":"#e5e5e5"}]},{"featureType":"transit.station","elementType":"geometry","stylers":[{"color":"#eeeeee"}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#c9c9c9"}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"color":"#9e9e9e"}]}];
+const icon = {
+  url: `${baseUrl}/img/marker.svg`,
+};
+
+
+function initReferencesMap() {
   const $map = $('#map');
 
   if ($map.length > 0) {
@@ -9,21 +20,14 @@ window.initMap = function initMap() {
     $map.css('height', height);
 
     const map = new google.maps.Map($map.get(0), {
-      zoom: 4,
-      center: {
-        lat: 45.916536,
-        lng: 8.332341,
-      },
-      styles: [{"elementType":"geometry","stylers":[{"color":"#f5f5f5"}]},{"elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"elementType":"labels.text.fill","stylers":[{"color":"#616161"}]},{"elementType":"labels.text.stroke","stylers":[{"color":"#f5f5f5"}]},{"featureType":"administrative.land_parcel","elementType":"labels.text.fill","stylers":[{"color":"#bdbdbd"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#eeeeee"}]},{"featureType":"poi","elementType":"labels.text.fill","stylers":[{"color":"#757575"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#e5e5e5"}]},{"featureType":"poi.park","elementType":"labels.text.fill","stylers":[{"color":"#9e9e9e"}]},{"featureType":"road","elementType":"geometry","stylers":[{"color":"#ffffff"}]},{"featureType":"road.arterial","elementType":"labels.text.fill","stylers":[{"color":"#757575"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"color":"#dadada"}]},{"featureType":"road.highway","elementType":"labels.text.fill","stylers":[{"color":"#616161"}]},{"featureType":"road.local","elementType":"labels.text.fill","stylers":[{"color":"#9e9e9e"}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"color":"#e5e5e5"}]},{"featureType":"transit.station","elementType":"geometry","stylers":[{"color":"#eeeeee"}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#c9c9c9"}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"color":"#9e9e9e"}]}],
+      zoom,
+      center,
+      styles,
     });
 
     const markers = {};
     const infoWindow = new google.maps.InfoWindow;
     const $infoBaseContent = $('<div class="marker row"><div class="col"><h3></h3><ul class="list-unstyled"><li class="marker-site_name">NOME IMPIANTO: <strong></strong></li><li class="marker-build_year">ANNO DI COSTRUZIONE: <strong></strong></li><li class="marker-nation">PAESE: <strong></strong></li></ul></div><div class="col"><img class="marker-image"></div></div>');
-
-    const icon = {
-      url: `${baseUrl}/img/marker.svg`,
-    };
 
     customers.forEach((customer) => {
       const marker = new google.maps.Marker({
@@ -59,4 +63,37 @@ window.initMap = function initMap() {
       });
     }
   }
+}
+
+function initContactsMaps() {
+  const $maps = $('.contacts-page-container .map');
+
+  $maps.each((_, $$map) => {
+    const $map = $($$map);
+
+    $map.height($map.width() / 2);
+
+    const lat = $map.data('lat');
+    const lng = $map.data('lng');
+
+    const map = new google.maps.Map($map.get(0), {
+      zoom,
+      center,
+      styles,
+    });
+
+    const marker = new google.maps.Marker({
+      icon,
+      map,
+      position: {
+        lat,
+        lng,
+      },
+    });
+  });
+}
+
+window.initMaps = function initMaps() {
+  initReferencesMap();
+  initContactsMaps();
 };

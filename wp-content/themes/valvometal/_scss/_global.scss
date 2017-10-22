@@ -3,7 +3,8 @@
 
 body {
   &.page-template-customers,
-  &.page-template-news {
+  &.page-template-news,
+  &.page-template-contacts {
     background-color: $white;
   }
 }

@@ -1,0 +1,66 @@
+@import "~bootstrap/scss/variables";
+
+.contacts-page-container {
+  margin-top: -250px;
+
+  h2 {
+    margin-top: 100px;
+    margin-bottom: 50px;
+
+    color: map_get($theme-colors, primary);
+    font-size: 1.5rem;
+    font-weight: $font-weight-bold;
+
+    &:before {
+      content: "\2193";
+
+      border-radius: 30px;
+      padding: 5px 14px;
+      margin-right: 10px;
+
+      background-color: map_get($theme-colors, primary);
+      color: $white;
+
+    }
+  }
+
+  h3 {
+    margin-bottom: 1.5rem;
+
+    color: map_get($theme-colors, primary);
+    font-size: .9rem;
+    font-weight: $font-weight-bold;
+
+    text-transform: uppercase;
+  }
+
+  .fa {
+    color: map_get($theme-colors, primary);
+    margin-right: .5rem;
+  }
+
+  .row {
+    &:nth-child(2n) {
+      box-shadow: 0 20px 100px 0 rgba($black, .1);
+    }
+  }
+
+  .col-6 {
+    $padding: 40px;
+
+    background-color: $white;
+
+    padding: $padding;
+
+    color: map_get($grays, 500);
+
+    &:nth-child(2n) {
+      background-color: map_get($grays, 100);
+    }
+
+    .map {
+      margin: -$padding;
+      margin-top: $padding * 1.5;
+    }
+  }
+}
