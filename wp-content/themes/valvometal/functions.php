@@ -1,5 +1,7 @@
 <?php
 
+global $wp;
+
 /**
  * Defining auxiliary constants
  *
@@ -17,6 +19,9 @@ define('WP_THEME_URI', get_template_directory_uri());
  */
 define('WP_THEME_SLUG', 'valvometal');
 define('WP_THEME_PREFIX', 'vm');
+
+$current_uri = home_url(add_query_arg(array(), $wp->request));
+define('VM_CURRENT_URI', $current_uri);
 
 /**
  * Including auxiliary files

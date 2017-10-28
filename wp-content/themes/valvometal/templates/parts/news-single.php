@@ -8,9 +8,11 @@ $categories = array_map(function ($category) { return $category->name; }, get_th
 <div class="news-single-container">
     <div class="container">
         <div class="row">
-            <div class="col-2"></div>
+            <div class="col-md-2">
+                <?php get_template_part('templates/parts/share') ?>
+            </div>
 
-            <div class="col-8">
+            <div class="col-md-8">
                 <div class="news-meta">
                     <?= get_the_date('l, F j, Y') ?> | <?= implode(' - ', $categories) ?>
                 </div>
