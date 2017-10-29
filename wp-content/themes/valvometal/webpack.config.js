@@ -13,6 +13,7 @@ module.exports = {
     vendor: [
       'bootstrap',
       'jquery',
+      'lity',
     ],
   },
 

@@ -1,4 +1,5 @@
 import 'bootstrap';
+import 'lity';
 
 import './_navbar';
 import './_backgrounds';
