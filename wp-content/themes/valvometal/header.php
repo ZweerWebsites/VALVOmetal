@@ -7,7 +7,10 @@ get_header('html');
 $logoId = get_field('logo', 'option');
 $logoDarkId = get_field('logo_dark', 'option');
 
-$backgrounds = get_field('backgrounds');
+$backgrounds = is_404() ?
+    get_field('404-background', 'option')
+    :
+    get_field('backgrounds');
 $isLightBackground = get_field('light_background');
 
 if ($backgrounds || get_the_post_thumbnail_url()) {
@@ -75,7 +78,13 @@ if ($backgrounds || get_the_post_thumbnail_url()) {
             <?php endforeach ?>
         </ol>
 
-        <h1><?= get_the_title() ?></h1>
-        <?php the_content() ?>
+        <h1><?= is_404() ? get_field('404-title', 'option') : get_the_title() ?></h1>
+        <?php is_404() ? the_field('404-content', 'option') : the_content() ?>
+
+        <?php if (is_404()) : ?>
+        <div>
+            <a class="btn btn-primary" href="/">Torna alla home</a>
+        </div>
+        <?php endif ?>
     <?php endif ?>
 </header>

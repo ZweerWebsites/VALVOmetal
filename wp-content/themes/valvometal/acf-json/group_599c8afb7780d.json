@@ -3,6 +3,22 @@
     "title": "Opzioni Tema",
     "fields": [
         {
+            "key": "field_59f6007776316",
+            "label": "Logo",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
             "key": "field_599c9714bbd71",
             "label": "Logo",
             "name": "logo",
@@ -49,6 +65,84 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_59f6008476317",
+            "label": "Pagina 404",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_59f6008d76318",
+            "label": "Titolo",
+            "name": "404-title",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_59f6009a76319",
+            "label": "Testo",
+            "name": "404-content",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_59f60103ab91c",
+            "label": "Sfondo",
+            "name": "404-background",
+            "type": "image",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "full",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
         }
     ],
     "location": [
@@ -68,5 +162,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1505419395
+    "modified": 1509294364
 }

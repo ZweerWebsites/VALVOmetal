@@ -6,7 +6,7 @@ $(() => {
     const class2add = 'active';
     const delay = 10000;
 
-    const $images = $backgrounds.find('img');
+    const $images = $backgrounds.find('.background');
     let index = 0;
 
     function advanceBackground() {
@@ -24,5 +24,21 @@ $(() => {
     }
 
     advanceBackground();
+
+    const $navbar = $('.navbar');
+    const $header = $('header');
+    const $production = $('.production-container');
+
+    function recalcBackgroundHeight() {
+      const navbarHeight = $navbar.outerHeight(true);
+      const headerHeight = $header.outerHeight(true);
+      const productionHeight = $production.outerHeight(true) || 0;
+
+      $backgrounds.height(navbarHeight + headerHeight + productionHeight);
+    }
+
+    const $window = $(window);
+    $window.resize(recalcBackgroundHeight);
+    $window.resize();
   }
 });
