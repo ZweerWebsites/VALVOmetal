@@ -81,6 +81,16 @@ if ($backgrounds || get_the_post_thumbnail_url()) {
         <h1><?= is_404() ? get_field('404-title', 'option') : get_the_title() ?></h1>
         <?php is_404() ? the_field('404-content', 'option') : the_content() ?>
 
+        <?php if ($photogalley = get_field('photogallery')) : ?>
+            <div class="photogallery">
+                <a href="#" class="btn btn-primary">Photogallery</a>
+
+                <?php foreach($photogalley as $image) : ?>
+
+                <?php endforeach ?>
+            </div>
+        <?php endif ?>
+
         <?php if (is_404()) : ?>
         <div>
             <a class="btn btn-primary" href="/">Torna alla home</a>

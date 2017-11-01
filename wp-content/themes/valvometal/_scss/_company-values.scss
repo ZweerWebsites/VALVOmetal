@@ -1,0 +1,47 @@
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/breakpoints";
+
+.company-values-container {
+  position: relative;
+
+  margin-bottom: -150px;
+
+  background-color: $white;
+
+  .container {
+    position: relative;
+    z-index: 2;
+
+    @include media-breakpoint-up(lg) {
+      transform: translateY(-50%);
+    }
+  }
+
+  .card-group {
+    box-shadow: 0 20px 100px 0 rgba($black, .1);
+  }
+
+  .card-body {
+    padding: 0 2rem 2rem;
+  }
+
+  .card {
+    position: relative;
+    border: 0;
+
+    color: map_get($theme-colors, primary);
+
+    &:nth-child(2n + 1) {
+      background-color: map_get($grays, 100);
+    }
+  }
+
+  .card-title {
+    color: map_get($theme-colors, primary);
+    font-size: 5rem;
+
+    font-weight: 100;
+
+    margin-bottom: -1rem;
+  }
+}

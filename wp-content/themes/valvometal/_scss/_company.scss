@@ -1,0 +1,61 @@
+@import "~bootstrap/scss/variables";
+
+.company-container {
+  background: $white;
+
+  padding-top: 200px;
+  padding-bottom: 300px;
+
+  > div {
+    margin-bottom: 80px;
+  }
+
+  h3,
+  h4 {
+    color: map_get($theme-colors, primary);
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  h4 {
+    font-size: .7rem;
+  }
+
+  .btn {
+    text-transform: uppercase;
+    margin-top: 3rem;
+  }
+
+  .company-content-images {
+    h3,
+    h4 {
+      color: $white;
+    }
+
+    h3 {
+      text-align: center;
+      margin: 50% 0;
+    }
+
+    h4 {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+    }
+
+    .row {
+      > div {
+        background-position: center;
+        background-size: cover;
+
+        position: relative;
+      }
+    }
+  }
+
+  + div {
+    background: map_get($theme-colors, primary);
+  }
+}
