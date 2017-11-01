@@ -19,7 +19,7 @@
  */
 
 // ** MySQL settings ** //
-if (@$_SERVER['SERVER_NAME'] === 'valvometal.loc' || @$_SERVER['PATH_TRANSLATED'] === '/usr/local/bin/wp') {
+if (@$_SERVER['SERVER_NAME'] === 'valvometal.loc' || @$_SERVER['PATH_TRANSLATED'] === '/Applications/MAMP/bin/php/php7.1.6/bin/wp-cli.phar') {
     /** The name of the database for WordPress */
     define( 'DB_NAME', 'valvometal' );
 
