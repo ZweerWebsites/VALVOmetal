@@ -35,9 +35,7 @@ $menuPageIds = array_map(function ($menuPage) {
 
             ?>
             <div class="row">
-                <div class="col-6">
-                    <?php the_retina_image(get_post_thumbnail_id($production), ['class' => 'mx-auto d-block img-fluid']) ?>
-                </div>
+                <div class="col-6" style="background-image: url('<?= wp_get_attachment_image_url(get_post_thumbnail_id($production), 'half') ?>');"></div>
 
                 <div class="col-6">
                     <h3><?= $title ?></h3>
