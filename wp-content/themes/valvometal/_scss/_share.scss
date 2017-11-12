@@ -12,6 +12,8 @@
   background-color: map_get($grays, 100);
   color: map_get($theme-colors, primary);
 
+  top: calc(30px + 70px + 10px);
+
   h4 {
     font-size: .9rem;
     font-weight: $font-weight-bold;
@@ -24,6 +26,8 @@
     a {
       display: block;
       text-align: center;
+
+      margin-bottom: 10px;
     }
   }
 }

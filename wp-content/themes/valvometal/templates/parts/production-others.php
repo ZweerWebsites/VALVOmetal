@@ -19,7 +19,7 @@ $menuPageIds = array_map(function ($menuPage) {
     <div class="container">
         <div class="row">
             <div class="col">
-                <h2><strong><?= get_field('other_products_title', $productionPage) ?></strong></h2>
+                <h2><?= get_field('other_products_title', $productionPage) ?></h2>
             </div>
         </div>
 

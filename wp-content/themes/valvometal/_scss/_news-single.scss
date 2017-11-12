@@ -5,6 +5,7 @@
 
   .news-meta {
     color: map_get($theme-colors, primary);
+    font-family: $headings-font-family;
     font-size: .9rem;
     font-weight: $font-weight-bold;
     text-transform: uppercase;

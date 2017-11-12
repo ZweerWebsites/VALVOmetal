@@ -23,5 +23,13 @@ $background = get_field('background_home', $referencesPage);
                 </div>
             </div>
         </div>
+
+        <?php if (!is_front_page()) : ?>
+        <div class="row">
+            <div class="col-1">
+                <a href="#map" class="btn btn-primary arrow-2-map">&downarrow;</a>
+            </div>
+        </div>
+        <?php endif ?>
     </div>
 </div>

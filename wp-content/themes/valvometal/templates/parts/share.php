@@ -1,4 +1,4 @@
-<ul class="share">
+<ul class="share sticky-top">
     <h4>Share</h4>
 
     <ul class="list-unstyled">

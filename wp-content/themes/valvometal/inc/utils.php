@@ -73,3 +73,9 @@ function get_the_breadcrumb($menu, $postId = null) {
 
     return array_reverse($breadcrumb);
 }
+
+add_filter('wpcf7_form_elements', function($content) {
+    $content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1><br[^\>]*>/i', '\2', $content);
+
+    return $content;
+});

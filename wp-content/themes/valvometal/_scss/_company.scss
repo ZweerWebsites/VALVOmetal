@@ -45,11 +45,26 @@
       left: 1rem;
     }
 
+    h3 {
+      position: relative;
+    }
+
     .row {
-      > div {
+      .background {
         background-position: center;
         background-size: cover;
 
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        opacity: .6;
+      }
+
+      > div {
+        background-color: $black;
         position: relative;
       }
     }

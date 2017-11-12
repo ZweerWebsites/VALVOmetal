@@ -1,4 +1,5 @@
 @import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/breakpoints";
 
 .contacts-page-container {
   margin-top: -250px;
@@ -39,6 +40,18 @@
     margin-right: .5rem;
   }
 
+  .contact-desktop {
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
+
+  .contact-mobile {
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
+  }
+
   .row {
     &:nth-child(2n) {
       box-shadow: 0 20px 100px 0 rgba($black, .1);
@@ -52,7 +65,7 @@
 
     padding: $padding;
 
-    color: map_get($grays, 500);
+    color: map_get($grays, 600);
 
     &:nth-child(2n) {
       background-color: map_get($grays, 100);

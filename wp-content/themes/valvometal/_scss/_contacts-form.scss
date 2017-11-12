@@ -2,7 +2,7 @@
 
 .contacts-form-container {
   background-color: map_get($theme-colors, primary);
-  color: white;
+  color: $white;
 
   padding-top: 250px;
   margin-top: -200px;
@@ -11,17 +11,41 @@
     padding: 25px 60px;
   }
 
+  .form-control-container {
+    position: relative;
+    margin: 20px auto;
+  }
+
   .form-control {
     background: transparent;
 
-    border: 0 solid white;
+    color: $white;
+
+    border: 0 solid $white;
     border-bottom-width: 1px;
 
     border-radius: 0;
 
     &::placeholder {
-      color: white;
+      color: transparent;
     }
+
+    &:not(:placeholder-shown) {
+      ~ .floating-label {
+        top: -5px;
+        font-size: 11px;
+      }
+    }
+  }
+
+  .floating-label {
+    position: absolute;
+    left: 12px;
+    top: 6px;
+
+    pointer-events: none;
+
+    transition: 0.2s ease all;
   }
 
   textarea {

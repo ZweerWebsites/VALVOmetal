@@ -40,7 +40,9 @@ $contents = get_field('content');
             <div class="container-fluid">
                 <div class="row">
                     <?php foreach ($images as $index => $image) : ?>
-                    <div class="col-md-<?= $imageClass ?> col-<?= $imageClass * 2 ?>" style="background-image: url('<?= wp_get_attachment_image_url($image['image'], 'half') ?>');">
+                    <div class="col-md-<?= $imageClass ?> col-<?= $imageClass * 2 ?>">
+                        <div class="background" style="background-image: url('<?= wp_get_attachment_image_url($image['image'], 'half') ?>');"></div>
+
                         <?php if ($index === 0) : ?>
                             <h4><?= $content['subtitle'] ?></h4>
                         <?php endif ?>

@@ -6,7 +6,7 @@
 
 get_header();
 
-get_template_part('templates/parts/customer-map');
+get_template_part('templates/parts/customer', 'map');
 get_template_part('templates/parts/map');
 get_template_part('templates/parts/spacer');
 get_template_part('templates/parts/customers-main');

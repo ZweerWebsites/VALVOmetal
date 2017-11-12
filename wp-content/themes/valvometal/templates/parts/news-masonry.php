@@ -13,6 +13,8 @@ $news = get_posts([
         <div class="card-columns">
             <?php foreach ($news as $new) : ?>
                 <div class="card">
+                    <small>Categoria</small>
+
                     <?php if ($attachmentId = get_post_thumbnail_id($new)) : ?>
                         <a href="<?= get_permalink($new) ?>">
                             <?php the_retina_image($attachmentId, ['class' => 'card-img-top', 'alt' => get_the_title($new)]) ?>
@@ -25,6 +27,8 @@ $news = get_posts([
                                 <?= get_the_title($new) ?>
                             </a>
                         </h4>
+
+                        <time><?= get_the_date('', $new) ?></time>
                     </div>
                 </div>
             <?php endforeach ?>

@@ -3,5 +3,32 @@
 .news_masonry-container {
   .card {
     border: 0;
+    background-color: #f8f9fa;
+    margin-bottom: 1.3rem;
+
+    small {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+
+      font-size: .8rem;
+
+      color: $white;
+      text-transform: uppercase;
+    }
+
+    .card-title {
+      margin-bottom: 1.25rem;
+    }
+
+    h4 {
+      font-weight: $font-weight-bold;
+    }
+
+    time {
+      font-size: .8rem;
+
+      color: map_get($grays, 500);
+    }
   }
 }

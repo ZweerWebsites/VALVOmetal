@@ -62,6 +62,7 @@
 
     &:hover {
       small {
+        color: map_get($theme-colors, primary) !important;
         opacity: 1 !important;
       }
     }
