@@ -1,0 +1,45 @@
+@import "~bootstrap/scss/variables";
+
+.quality_assurance-container {
+  background-color: $white;
+
+  h2,
+  h3 {
+    color: map_get($theme-colors, primary);
+    font-weight: $font-weight-bold;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: .8rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+
+  .text {
+    font-size: 1.3rem;
+    padding-bottom: 5rem;
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 2rem;
+
+      &:before {
+        @extend .fa;
+        @extend .fa-check;
+
+        position: absolute;
+        right: 100%;
+        padding-left: 1rem;
+      }
+    }
+  }
+}

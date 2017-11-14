@@ -1,0 +1,55 @@
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/breakpoints";
+
+.certifications-container {
+  background-color: $white;
+
+  .container {
+    position: relative;
+    z-index: 2;
+
+    @include media-breakpoint-up(lg) {
+      transform: translateY(-50%);
+    }
+  }
+
+  .certifications {
+    background: $white;
+    box-shadow: 0 20px 100px 0 rgba($black, .1);
+  }
+
+  .certification {
+    color: map_get($theme-colors, primary);
+
+    padding: 2rem;
+
+    > .fa {
+      float: left;
+
+      margin: 3rem 3rem 4rem 1rem;
+      font-size: 3rem;
+    }
+
+    h4 {
+      font-size: .8rem;
+      font-weight: $font-weight-bold;
+      text-transform: uppercase;
+
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1rem;
+
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      margin-top: 2rem;
+
+      padding: 14px 18px;
+      font-size: 1.5rem;
+      border-radius: 50%;
+    }
+  }
+}

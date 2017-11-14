@@ -25,15 +25,15 @@ add_action('wp_enqueue_scripts', function () {
         $version = random_int(0, 999999);
     }
 
-    wp_enqueue_script('manifest', WP_THEME_URI . '/dist/manifest.js', array(), $version, true );
-    wp_enqueue_script('vendor', WP_THEME_URI . '/dist/vendor.js', array(), $version, true );
-    wp_enqueue_script('main', WP_THEME_URI . '/dist/main.js', array(), $version, true );
-    wp_enqueue_script('modernizr', WP_THEME_URI . '/dist/modernizr-bundle.js', array(), $version, false );
+    wp_enqueue_script('manifest', WP_THEME_URI . '/dist/js/manifest.js', array(), $version, true );
+    wp_enqueue_script('vendor', WP_THEME_URI . '/dist/js/vendor.js', array(), $version, true );
+    wp_enqueue_script('main', WP_THEME_URI . '/dist/js/main.js', array(), $version, true );
+    wp_enqueue_script('modernizr', WP_THEME_URI . '/dist/js/modernizr-bundle.js', array(), $version, false );
 
     $googleMapsApiKey = apply_filters('acf/settings/google_api_key', '');
     wp_enqueue_script('google_maps', 'https://maps.googleapis.com/maps/api/js?key=' . $googleMapsApiKey . '&callback=initMaps', array(), $version, true);
 
-    wp_enqueue_style('main', WP_THEME_URI . '/dist/main.css', array(), $version );
+    wp_enqueue_style('main', WP_THEME_URI . '/dist/css/main.css', array(), $version );
 
     /**
      * Loading of the style.css file

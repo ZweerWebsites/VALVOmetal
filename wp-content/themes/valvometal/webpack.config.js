@@ -14,11 +14,12 @@ module.exports = {
       'bootstrap',
       'jquery',
       'lity',
+      'slick-carousel',
     ],
   },
 
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, 'dist' ,'js'),
     filename: '[name].js',
   },
 
@@ -61,8 +62,23 @@ module.exports = {
         },
       }],
     }, {
-      test: /\.(png|woff|woff2|eot|ttf|svg)$/,
-      loader: 'url-loader?limit=100000',
+      test: /\.(woff2?|eot|ttf|svg)/,
+      use: [{
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+          outputPath: '../fonts/',    // where the fonts will go
+        },
+      }],
+    }, {
+      test: /\.(png|gif|jpe?g)/,
+      use: [{
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+          outputPath: '../img/',    // where the fonts will go
+        },
+      }],
     }],
   },
 
@@ -78,7 +94,7 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({ // seperate vendor chunks
       name: ['vendor', 'manifest'],
     }),
-    new ExtractTextPlugin('[name].css'),
+    new ExtractTextPlugin('../css/[name].css'),
     new WebpackCleanupPlugin(),
     new webpack.optimize.UglifyJsPlugin({ minimize: true }),
     new ModernizrPlugin({

@@ -1,0 +1,110 @@
+@import "~bootstrap/scss/variables";
+
+.testing-container {
+  background-color: map_get($grays, 100);
+  text-align: center;
+
+  padding: 5rem 0;
+
+  h2,
+  h3 {
+    color: map_get($theme-colors, primary);
+    font-weight: $font-weight-bold;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  h3 {
+    font-size: .8rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.testing_tabs-container {
+  background-position: center;
+  background-size: cover;
+
+  color: $white;
+
+  padding-bottom: 150px;
+
+  .nav-tabs {
+    border: 0;
+  }
+
+  .nav-item {
+    color: $white;
+    background: none;
+    border-radius: 0;
+    border: 0;
+    border-left: 1px solid map_get($grays, 500);
+
+    text-align: center;
+    padding: 1.5rem 0 !important;
+
+    position: relative;
+
+    font-size: .8rem;
+    text-transform: uppercase;
+
+    &:first-child {
+      border: 0;
+    }
+
+    &.active,
+    &:hover {
+      color: $white;
+      background-color: map_get($theme-colors, primary);
+
+      &:before {
+        content: "";
+        border: 5px solid transparent;
+        border-top-color: map_get($theme-colors, primary);
+
+        position: absolute;
+        top: 100%;
+        left: calc(50% - 2px);
+      }
+    }
+  }
+
+  .tab-title,
+  .tab-text {
+    padding: 10rem 0;
+  }
+
+  .tab-title {
+    font-size: 1.3rem;
+  }
+
+  .tab-text {
+    font-size: 1rem;
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 1rem;
+
+      &:before {
+        @extend .fa;
+        @extend .fa-check;
+
+        position: absolute;
+        right: 100%;
+        padding-left: 1rem;
+      }
+    }
+  }
+}

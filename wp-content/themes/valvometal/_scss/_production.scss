@@ -5,13 +5,18 @@
   position: relative;
 
   margin-bottom: -150px;
+  .page-template-company &,
+  .page-template-quality & {
+    margin-bottom: -350px;
+  }
 
   background-color: $white;
 
   .page-template-products & {
     background-color: transparent;
   }
-  .page-template-customers & {
+  .page-template-customers &,
+  .page-template-quality & {
     margin-bottom: -50px;
     background-color: map_get($theme-colors, primary);
   }
