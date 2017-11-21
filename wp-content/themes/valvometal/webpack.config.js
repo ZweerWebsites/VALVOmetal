@@ -13,8 +13,9 @@ module.exports = {
     vendor: [
       'bootstrap',
       'jquery',
-      'lity',
       'slick-carousel',
+      'lightgallery',
+      'jquery-sticky',
     ],
   },
 

@@ -2,7 +2,9 @@
 
 .share {
   padding: 10px;
-  margin: calc(3rem - 7px) 20% 0;
+
+  width: 100px !important;
+  margin-top: calc(3rem - 7px);
 
   font-size: 1.2rem;
   font-weight: $font-weight-bold;
@@ -12,7 +14,7 @@
   background-color: map_get($grays, 100);
   color: map_get($theme-colors, primary);
 
-  top: calc(30px + 70px + 10px);
+  // top: calc(30px + 70px + 10px);
 
   h4 {
     font-size: .9rem;

@@ -14,6 +14,18 @@
     padding-top: 250px;
   }
 
+  .col-newsletter {
+    padding-bottom: 100px;
+    margin-bottom: -100px;
+
+    padding-top: 400px;
+    margin-top: -500px;
+
+    + .col-newsletter {
+      background-color: darken(map_get($theme-colors, primary), 10%);
+    }
+  }
+
   small {
     font-family: $headings-font-family;
     text-transform: uppercase;
@@ -21,6 +33,9 @@
 
   h3 {
     width: 35%;
+    .page-template-product & {
+      width: 75%;
+    }
 
     margin: 1rem auto 4rem;
   }
@@ -61,6 +76,13 @@
         .col {
           margin-left: 0;
           margin-right: 20%;
+
+          .page-template-product & {
+            flex: 0 0 100%;
+
+            padding: 0 20% 2rem;
+            margin: 0 !important;
+          }
 
           &:first-child {
             margin-left: 20%;

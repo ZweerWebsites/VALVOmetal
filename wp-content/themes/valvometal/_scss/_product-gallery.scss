@@ -1,0 +1,59 @@
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/breakpoints";
+
+.product_gallery-container {
+  background-color: map_get($theme-colors, primary);
+
+  .container {
+    position: relative;
+    z-index: 2;
+
+    @include media-breakpoint-up(lg) {
+      transform: translateY(-50%);
+    }
+  }
+
+  .gallery-preview {
+    background-position: center;
+    background-size: cover;
+
+    position: relative;
+
+    &.col-6 {
+      padding-top: 25%;
+    }
+
+    h4 {
+      position: absolute;
+      left: 20px;
+      bottom: 10px;
+
+      color: $white;
+      opacity: .8;
+      font-size: 5rem;
+    }
+  }
+
+  .gallery-button {
+    background-color: map_get($theme-colors, primary);
+    color: $white;
+    text-align: center;
+
+    h3 {
+      font-size: 2.1rem;
+
+      margin: 3rem 0 4rem;
+    }
+
+    .btn {
+      color: map_get($theme-colors, primary);
+      font-size: 1rem;
+
+      padding: 10px 30px;
+    }
+  }
+
+  .product-gallery {
+    display: none;
+  }
+}

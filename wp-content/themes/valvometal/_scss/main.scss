@@ -2,9 +2,9 @@
 
 @import "~bootstrap/scss/bootstrap";
 @import "~font-awesome/scss/font-awesome";
-@import "~lity/dist/lity";
 @import "~slick-carousel/slick/slick";
 @import "~slick-carousel/slick/slick-theme";
+@import "~lightgallery/src/sass/lightgallery";
 
 @import "wp";
 
@@ -36,3 +36,5 @@
 @import "certifications";
 @import "quality-assurance";
 @import "testing";
+@import "product-content";
+@import "product-gallery";

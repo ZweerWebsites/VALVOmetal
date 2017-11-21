@@ -91,6 +91,14 @@ if ($backgrounds || get_the_post_thumbnail_url()) {
             </div>
         <?php endif ?>
 
+        <?php if (get_page_template_slug() === 'templates/product.php' && $attachmentId = get_post_thumbnail_id()) : ?>
+            <figure class="product-image">
+                <?php the_retina_image($attachmentId, ['alt' => get_the_title()]) ?>
+                <br>
+                <a href="#content" class="btn btn-primary">&downarrow;</a>
+            </figure>
+        <?php endif ?>
+
         <?php if (is_404()) : ?>
         <div>
             <a class="btn btn-primary" href="/">Torna alla home</a>
