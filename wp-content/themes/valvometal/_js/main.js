@@ -10,6 +10,7 @@ import './_scroll';
 import './_certifications';
 import './_product';
 import './_news';
+import './_testing';
 
 Modernizr.addTest('safari', function() {
   return navigator.userAgent.indexOf('Safari') !== -1 && navigator.userAgent.indexOf('Chrome') === -1;

@@ -11,6 +11,20 @@
     padding: 25px 60px;
   }
 
+  textarea {
+    border-width: 1px !important;
+  }
+
+  .btn-light {
+    color: map_get($theme-colors, primary);
+
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+  }
+}
+
+.contacts-form-container,
+.newsletter-container {
   .form-control-container {
     position: relative;
     margin: 20px auto;
@@ -46,16 +60,5 @@
     pointer-events: none;
 
     transition: 0.2s ease all;
-  }
-
-  textarea {
-    border-width: 1px !important;
-  }
-
-  .btn-light {
-    color: map_get($theme-colors, primary);
-
-    margin-top: 2rem;
-    margin-bottom: 5rem;
   }
 }
