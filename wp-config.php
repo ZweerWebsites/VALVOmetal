@@ -31,7 +31,7 @@ if (@$_SERVER['SERVER_NAME'] === 'valvometal.loc' || @$_SERVER['PATH_TRANSLATED'
 
     /** MySQL hostname */
     define( 'DB_HOST', 'localhost' );
-} else if (@$_SERVER['PWD'] === '/var/www/valvometal.olivieriachille.com/htdocs') {
+} else if (@$_SERVER['PWD'] === '/var/www/valvometal.olivieriachille.com/htdocs' || @$_SERVER['SERVER_NAME'] === 'valvometal.olivieriachille.com') {
     /** The name of the database for WordPress */
     define('DB_NAME', 'valvometal_olivieriachille_com');
 
