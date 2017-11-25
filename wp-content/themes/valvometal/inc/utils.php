@@ -45,33 +45,36 @@ function the_retina_image($attachmentId, $attrs = []) {
  * @param string $menu
  * @return WP_Post[]
  */
-function get_the_breadcrumb($menu, $postId = null) {
+function get_the_breadcrumbs($menu, $postId = null) {
     if (!$postId) {
         $postId = get_the_ID();
     }
 
-    $breadcrumb = [[
+    $parents = get_post_ancestors($postId);
+    array_push($parents, $postId);
+
+    $breadcrumbs = [[
         'title' => 'Home',
         'url' => get_home_url(),
     ]];
     $menuPages = wp_get_nav_menu_items($menu);
 
-    do {
-        foreach ($menuPages as $menuPage) {
-            if ($menuPage->object_id === (string)$postId) {
-                array_unshift($breadcrumb, [
-                    'title' => $menuPage->title,
-                    'url' => $menuPage->url,
-                ]);
+    foreach ($parents as $parent) {
+        $menuPage = array_filter($menuPages, function ($tmpMenuPage) use ($parent) {
+            return $tmpMenuPage->object_id === (string)$parent;
+        });
 
-                $postId = $menuPage->menu_parent_id;
+        if (count($menuPage) > 0) {
+            $menuPage = array_pop($menuPage);
 
-                break;
-            }
+            array_unshift($breadcrumbs, [
+                'title' => $menuPage->title,
+                'url' => $menuPage->url,
+            ]);
         }
-    } while ($postId === '0');
+    }
 
-    return array_reverse($breadcrumb);
+    return array_reverse($breadcrumbs);
 }
 
 add_filter('wpcf7_form_elements', function($content) {

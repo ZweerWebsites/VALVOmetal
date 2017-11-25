@@ -57,7 +57,7 @@ if ($backgrounds || get_the_post_thumbnail_url()) {
     ]) ?>
 </nav>
 
-<header>
+<header class="invisible">
     <?php if (is_front_page()) : ?>
         <h1><?= get_bloginfo('name') ?></h1>
         <p><?= get_bloginfo('description') ?></p>
@@ -67,7 +67,7 @@ if ($backgrounds || get_the_post_thumbnail_url()) {
         </div>
     <?php else : ?>
         <ol class="breadcrumb">
-            <?php $breadcrumbs = get_the_breadcrumb('main-menu') ?>
+            <?php $breadcrumbs = get_the_breadcrumbs('main-menu') ?>
             <?php foreach ($breadcrumbs as $index => $page) : ?>
                 <?php $isActive = $index === count($breadcrumbs) - 1 ?>
                 <li class="breadcrumb-item <?= $isActive ? 'active' : '' ?>">
@@ -85,9 +85,11 @@ if ($backgrounds || get_the_post_thumbnail_url()) {
             <div class="photogallery">
                 <a href="#" class="btn btn-primary">Photogallery</a>
 
-                <?php foreach($photogalley as $image) : ?>
-
-                <?php endforeach ?>
+                <div class="product-gallery">
+                    <?php foreach($photogalley as $image) : ?>
+                        <a href="<?= $image['url'] ?>"><img src="<?= $image['url'] ?>"></a>
+                    <?php endforeach ?>
+                </div>
             </div>
         <?php endif ?>
 

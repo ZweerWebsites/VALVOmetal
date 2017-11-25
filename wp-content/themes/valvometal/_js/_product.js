@@ -1,7 +1,7 @@
 import $ from 'jquery';
 
 $(() => {
-  const $productGalleries = $('.gallery-button');
+  const $productGalleries = $('.gallery-button, .photogallery');
 
   $productGalleries.each((index, productGallery) => {
     const $productGallery = $(productGallery);

@@ -33,7 +33,8 @@
     "lg-zoom": "^1.1.0",
     "lightgallery": "^1.6.5",
     "popper.js": "^1.11.1",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "waypoints": "^4.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
