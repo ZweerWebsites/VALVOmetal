@@ -22,7 +22,7 @@ if ($isNews) {
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col-<?= $isNews ? '8' : '12' ?>">
-                <div class="card-group">
+                <div class="card-group invisible">
                     <?php foreach ($newsPosts as $index => $newsPost) :
                         $categories = get_the_terms($newsPost, 'news_category');
                         $category = implode(', ', array_map(function ($cat) {

@@ -6,7 +6,6 @@
   h2,
   h3 {
     color: map_get($theme-colors, primary);
-    font-weight: $font-weight-bold;
   }
 
   h2 {
@@ -17,6 +16,7 @@
     font-size: .8rem;
     text-transform: uppercase;
     margin-bottom: 2rem;
+    font-weight: $font-weight-bold;
   }
 
   .text {

@@ -7,6 +7,11 @@
   padding-top: 250px;
   margin-top: -200px;
 
+  h2 {
+    font-size: 1.5rem;
+    font-weight: $font-weight-bold;
+  }
+
   .col-6 {
     padding: 25px 60px;
   }
@@ -20,6 +25,11 @@
 
     margin-top: 2rem;
     margin-bottom: 5rem;
+  }
+
+  .wpcf7-list-item {
+    display: inline-block;
+    margin: 0 1em 0 0;
   }
 }
 

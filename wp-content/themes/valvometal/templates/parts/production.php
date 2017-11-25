@@ -9,7 +9,7 @@ $menuPages = wp_get_nav_menu_items('main-menu');
 
 <div class="production-container">
     <div class="container">
-        <div class="card-group">
+        <div class="card-group invisible">
             <?php
 
             $index = 0;

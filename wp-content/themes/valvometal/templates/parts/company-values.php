@@ -6,7 +6,7 @@ $values = get_field('high-values');
 
 <div class="company-values-container">
     <div class="container">
-        <div class="card-group">
+        <div class="card-group invisible">
             <?php foreach ($values as $value) : ?>
             <div class="card">
                 <div class="card-body">

@@ -137,7 +137,7 @@
     }
 
     .card-text {
-      color: #9F9F9F;
+      color: map_get($grays, 600);
     }
 
     .btn {

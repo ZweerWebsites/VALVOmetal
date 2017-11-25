@@ -11,7 +11,7 @@ $background = get_field('background_home', $referencesPage);
     <div class="container">
         <div class="row">
             <div class="col-8">
-                <div class="card-group">
+                <div class="card-group invisible">
                     <?php foreach ($stats as $stat) : ?>
                     <div class="card">
                         <div class="card-body">
