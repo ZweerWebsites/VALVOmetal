@@ -8,7 +8,7 @@ $isProduct = get_page_template_slug() === 'templates/product.php';
     <?php if ($isProduct) : ?>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-6 col-newsletter">
+                <div class="col-md-6 col-newsletter">
                     <div class="row">
                         <div class="col">
                             <small>Newsletter subscription</small>
@@ -20,7 +20,7 @@ $isProduct = get_page_template_slug() === 'templates/product.php';
                     <?= do_shortcode('[mc4wp_form id="79"]') ?>
                 </div>
 
-                <div class="col-6 col-newsletter">
+                <div class="col-md-6 col-newsletter">
                     <div class="row">
                         <div class="col">
                             <small>More information</small>

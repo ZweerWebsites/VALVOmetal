@@ -10,7 +10,7 @@ $customers = array_slice($customers, 0, 2);
 <div class="customers-container">
     <div class="container">
         <div class="row">
-            <div class="col-8">
+            <div class="col-md-8">
                 <div class="card-group invisible">
                     <?php foreach ($customers as $customer) : ?>
                     <div class="card">
@@ -32,7 +32,7 @@ $customers = array_slice($customers, 0, 2);
                 </div>
             </div>
 
-            <div class="col-4">
+            <div class="col-md-4">
                 <h3><?= get_the_title($customersPage) ?></h3>
                 <h4><?= get_the_excerpt($customersPage) ?></h4>
                 <a class="btn btn-primary" href="<?= get_permalink($customersPage) ?>"><?= get_the_title($customersPage) ?></a>

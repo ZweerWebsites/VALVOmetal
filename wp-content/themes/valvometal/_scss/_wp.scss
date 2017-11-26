@@ -46,10 +46,10 @@ body {
 
   &.logged-in {
     .navbar.fixed-top {
-      top: 46px !important;
+      // top: 46px !important;
 
       @media only screen and (min-width: 783px) {
-        top: 28px !important;
+        // top: 28px !important;
       }
     }
   }
