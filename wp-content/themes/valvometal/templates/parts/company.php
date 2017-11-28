@@ -16,12 +16,12 @@ $contents = get_field('content');
                     ?>
             <div class="container">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-md-6">
                         <h4><?= $content['subtitle'] ?></h4>
                         <h3><?= $content['title'] ?></h3>
                     </div>
 
-                    <div class="col-6">
+                    <div class="col-md-6">
                         <?= $content['text'] ?>
 
                         <?php if ($content['link']) : ?>

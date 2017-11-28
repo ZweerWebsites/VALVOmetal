@@ -10,7 +10,7 @@ $background = get_field('background_home', $referencesPage);
 <div class="customer_map-container" style="background-image: url('<?= wp_get_attachment_url($background) ?>');">
     <div class="container">
         <div class="row">
-            <div class="col-8">
+            <div class="col-md-8">
                 <div class="card-group invisible">
                     <?php foreach ($stats as $stat) : ?>
                     <div class="card">

@@ -1,4 +1,5 @@
 @import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/breakpoints";
 
 .contacts-form-container {
   background-color: map_get($theme-colors, primary);
@@ -30,6 +31,12 @@
   .wpcf7-list-item {
     display: inline-block;
     margin: 0 1em 0 0;
+  }
+
+  + .spacer {
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
   }
 }
 

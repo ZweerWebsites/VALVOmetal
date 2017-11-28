@@ -58,5 +58,9 @@
 
   + .spacer {
     background-color: $white;
+
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
   }
 }

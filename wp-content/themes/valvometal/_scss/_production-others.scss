@@ -1,7 +1,13 @@
 @import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/breakpoints";
 
 .production-others-container {
-  margin-top: -280px;
+  background-color: $white;
+  @include media-breakpoint-up(md) {
+    background-color: transparent;
+    margin-top: -280px;
+  }
+
   position: relative;
   z-index: 3;
 
@@ -36,16 +42,22 @@
     position: relative;
     z-index: 3;
 
-    .col-6 {
+    .col-6,
+    .col-md-6 {
       &:first-child {
         padding-left: 0;
         padding-right: 0;
 
         background-position: center;
         background-size: cover;
+
+        @include media-breakpoint-down(md) {
+          padding-top: 25%;
+        }
       }
 
-      + .col-6 {
+      + .col-6,
+      + .col-md-6 {
         background-color: map_get($grays, 100);
         padding: 2.5rem;
       }

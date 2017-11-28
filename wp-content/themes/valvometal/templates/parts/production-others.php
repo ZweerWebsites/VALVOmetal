@@ -35,9 +35,9 @@ $menuPageIds = array_map(function ($menuPage) {
 
             ?>
             <div class="row">
-                <div class="col-6" style="background-image: url('<?= wp_get_attachment_image_url(get_post_thumbnail_id($production), 'half') ?>');"></div>
+                <div class="col-md-6" style="background-image: url('<?= wp_get_attachment_image_url(get_post_thumbnail_id($production), 'half') ?>');"></div>
 
-                <div class="col-6">
+                <div class="col-md-6">
                     <h3><?= $title ?></h3>
                     <p><?= get_the_excerpt($production) ?></p>
                     <a href="<?= get_permalink($production) ?>" class="btn btn-outline-primary">Discover More</a>

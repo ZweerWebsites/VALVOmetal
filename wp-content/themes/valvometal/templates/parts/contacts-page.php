@@ -15,7 +15,7 @@ $contacts = get_field('contacts');
 
             <div class="row">
                 <?php foreach ($contact['locations'] as $location) : ?>
-                    <div class="col-6">
+                    <div class="col-md-6">
                         <h3><?= $location['role'] ?></h3>
 
                         <address><?= $location['address']['address'] ?></address>
@@ -33,7 +33,7 @@ $contacts = get_field('contacts');
                     </div>
 
                     <?php if ($location['image']) : ?>
-                        <div class="col-6" style="background-image: url(<?= wp_get_attachment_image_url($location['image'], 'half') ?>);"></div>
+                        <div class="col-md-6 contacts-page-image" style="background-image: url(<?= wp_get_attachment_image_url($location['image'], 'half') ?>);"></div>
                     <?php endif ?>
                 <?php endforeach ?>
             </div>

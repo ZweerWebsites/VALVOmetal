@@ -1,4 +1,4 @@
-<ul class="share">
+<div class="share">
     <h4>Share</h4>
 
     <ul class="list-unstyled">
@@ -13,4 +13,4 @@
             </a>
         </li>
     </ul>
-</ul>
+</div>

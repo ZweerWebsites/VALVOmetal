@@ -1,4 +1,5 @@
 @import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/breakpoints";
 
 .navbar {
   &.navbar-hidden {
@@ -44,6 +45,10 @@ header {
 
   margin: 8% auto 300px;
   .page-template-products & {
+    @include media-breakpoint-down(md) {
+      margin-bottom: 20px;
+    }
+
     margin-bottom: 350px;
   }
   .page-template-news &,

@@ -3,8 +3,13 @@
 
 .contacts-container {
   background-color: map_get($grays, 100);
-  margin-top: -320px;
-  padding-top: 260px;
+  
+  padding-top: 30px;
+  @include media-breakpoint-up(md) {
+    margin-top: -320px;
+    padding-top: 260px;
+  }
+
   .spacer + & {
     padding-top: 80px;
   }

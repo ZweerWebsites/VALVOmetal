@@ -1,7 +1,10 @@
 @import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/breakpoints";
 
 .customers-container {
-  transform: translateY(-50%);
+  @include media-breakpoint-up(md) {
+    transform: translateY(-50%);
+  }
 
   .card-group {
     box-shadow: 0 20px 100px 0 rgba($black, .1);
@@ -42,17 +45,27 @@
 
     text-transform: uppercase;
 
-    margin-top: -2.3rem;
+    margin-top: 2rem;
+    @include media-breakpoint-up(md) {
+      margin-top: -2.3rem;
+    }
     margin-bottom: 1rem;
   }
 
   h4 {
     font-size: 2rem;
 
-    margin-bottom: 8rem;
+    margin-bottom: 2rem;
+    @include media-breakpoint-up(md) {
+      margin-bottom: 8rem;
+    }
 
     + a {
       font-size: .9rem;
+
+      @include media-breakpoint-down(md) {
+        margin-bottom: 2rem;
+      }
     }
   }
 }

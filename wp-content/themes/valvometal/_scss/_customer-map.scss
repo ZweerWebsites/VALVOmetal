@@ -1,8 +1,11 @@
 @import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/breakpoints";
 
 .customer_map-container {
-  padding-top: 100px;
-  padding-bottom: 25%;
+  @include media-breakpoint-up(md) {
+    padding-top: 100px;
+    padding-bottom: 25%;
+  }
 
   background: bottom no-repeat;
 
@@ -48,6 +51,10 @@
       left: 0;
 
       border-left: 1px dotted map_get($grays, 100);
+      @include media-breakpoint-down(md) {
+        border-left: 0 !important;
+      }
+
       .page-template-customers & {
         border-left: 1px solid map_get($theme-colors, primary);
       }

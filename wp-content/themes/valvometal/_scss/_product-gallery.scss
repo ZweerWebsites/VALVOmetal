@@ -19,8 +19,11 @@
 
     position: relative;
 
-    &.col-6 {
-      padding-top: 25%;
+    &.col-6,
+    &.col-md-6 {
+      @include media-breakpoint-up(md) {
+        padding-top: 25%;
+      }
     }
 
     h4 {
@@ -39,6 +42,11 @@
     background-color: map_get($theme-colors, primary);
     color: $white;
     text-align: center;
+
+    padding-bottom: 3rem;
+    @include media-breakpoint-up(md) {
+      padding-bottom: 0;
+    }
 
     h3 {
       font-size: 2.1rem;

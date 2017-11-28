@@ -1,9 +1,16 @@
 @import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/breakpoints";
 
 .share {
   padding: 10px;
 
   width: 100px !important;
+  @include media-breakpoint-down(md) {
+    .is-sticky & {
+      display: none;
+    }
+  }
+
   margin-top: calc(3rem - 7px);
 
   font-size: 1.2rem;

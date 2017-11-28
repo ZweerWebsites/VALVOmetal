@@ -42,7 +42,7 @@ $numPages = ceil($numCustomers / $customersPerPage);
                 <div class="carousel-item <?= $i === 0 ? 'active' : '' ?>">
                     <div class="row">
                     <?php for ($j = $i * $customersPerPage; $j < ($i + 1) * $customersPerPage && $j < count($customers); $j += 1) : ?>
-                        <div class="col-<?= 12 / $customersPerPage ?> customer_logo" data-marker-index="<?= $j ?>">
+                        <div class="col-md-<?= 12 / $customersPerPage ?> customer_logo" data-marker-index="<?= $j ?>">
                             <img src="<?= wp_get_attachment_image_url($customers[$j]['image'], 'half') ?>">
                         </div>
                     <?php endfor ?>
