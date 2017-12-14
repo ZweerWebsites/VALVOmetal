@@ -40,7 +40,7 @@ $menuPageIds = array_map(function ($menuPage) {
                 <div class="col-md-6">
                     <h3><?= $title ?></h3>
                     <p><?= get_the_excerpt($production) ?></p>
-                    <a href="<?= get_permalink($production) ?>" class="btn btn-outline-primary">Discover More</a>
+                    <a href="<?= get_permalink(get_page_by_path('contact')) ?>" class="btn btn-outline-primary">Request Info</a>
                 </div>
             </div>
         <?php endforeach ?>

@@ -4,10 +4,6 @@ $referencesPage = get_page_by_path('references');
 
 $customers = get_field('customers', $referencesPage);
 
-$numCustomers = count($customers);
-$customersPerPage = 4;
-$numPages = ceil($numCustomers / $customersPerPage);
-
 ?>
 
 <script type="text/javascript">
@@ -29,6 +25,18 @@ $numPages = ceil($numCustomers / $customersPerPage);
 
 <div id="map" class="container-fluid"></div>
 
+<?php
+
+array_splice($customers, 0, 8);
+
+$numCustomers = count($customers);
+$customersPerPage = 4;
+$numPages = ceil($numCustomers / $customersPerPage);
+
+$customersRandom = array_rand($customers);
+
+?>
+
 <div class="customers_on_map-container">
     <div id="customer_on_map-carousel" class="container carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -41,9 +49,9 @@ $numPages = ceil($numCustomers / $customersPerPage);
             <?php for ($i = 0; $i < $numPages; $i += 1) : ?>
                 <div class="carousel-item <?= $i === 0 ? 'active' : '' ?>">
                     <div class="row">
-                    <?php for ($j = $i * $customersPerPage; $j < ($i + 1) * $customersPerPage && $j < count($customers); $j += 1) : ?>
+                    <?php for ($j = $i * $customersPerPage; $j < ($i + 1) * $customersPerPage && $j < count($customersRandom); $j += 1) : ?>
                         <div class="col-md-<?= 12 / $customersPerPage ?> customer_logo" data-marker-index="<?= $j ?>">
-                            <img src="<?= wp_get_attachment_image_url($customers[$j]['image'], 'half') ?>">
+                            <img src="<?= wp_get_attachment_image_url($customersRandom[$j]['image'], 'half') ?>">
                         </div>
                     <?php endfor ?>
                     </div>
