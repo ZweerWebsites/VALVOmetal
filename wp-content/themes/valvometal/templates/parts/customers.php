@@ -3,7 +3,8 @@
 $customersPage = get_page_by_path('references');
 
 $customers = get_field('customers', $customersPage);
-$customers = array_slice(array_rand($customers), 0, 2);
+shuffle($customers);
+$customers = array_slice($customers, 0, 2);
 
 ?>
 

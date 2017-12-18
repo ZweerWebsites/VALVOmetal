@@ -33,7 +33,7 @@ $numCustomers = count($customers);
 $customersPerPage = 4;
 $numPages = ceil($numCustomers / $customersPerPage);
 
-$customersRandom = array_rand($customers);
+shuffle($customers);
 
 ?>
 
