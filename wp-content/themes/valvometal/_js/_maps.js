@@ -39,6 +39,8 @@ function initReferencesMap() {
         },
       });
 
+      marker.customerInfo = customer;
+
       const infoContent = $infoBaseContent.clone();
       infoContent.find('h3').text(customer.name);
       infoContent.find('.marker-site_name strong').text(customer.site_name);
@@ -52,6 +54,27 @@ function initReferencesMap() {
       });
 
       markers[customer.index] = marker;
+    });
+
+    const $filterCustomer = $('#map_filter_customer');
+    const $filterSite = $('#map_filter_site');
+    const $filterNation = $('#map_filter_nation');
+    const $filterApply = $('.map_filter_apply');
+
+    $filterApply.click(() => {
+      const filterCustomer = $filterCustomer.val();
+      const filterSite = $filterSite.val();
+      const filterNation = $filterNation.val();
+
+      Object.values(markers).forEach((marker) => {
+        const {
+          name,
+          site_name,
+          nation,
+        } = marker.customerInfo;
+
+        marker.setVisible((filterCustomer === '' || filterCustomer === name) && (filterSite === '' || filterSite === site_name) && (filterNation === '' || filterNation === nation));
+      });
     });
 
     if (false) {

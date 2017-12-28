@@ -6,11 +6,22 @@ $contacts = get_field('contacts');
 
 <div class="contacts-page-container">
     <div class="container">
-        <?php foreach ($contacts as $contact) : ?>
+        <?php foreach ($contacts as $index => $contact) : ?>
             <div class="row">
-                <div class="col">
+                <div class="col-md-6">
                     <h2><?= $contact['nation'] ?></h2>
                 </div>
+
+                <?php if ($index === 0) : ?>
+                <div class="col-md-6 linkedin">
+                    Do you want to work with us?
+
+                    <a href="https://www.linkedin.com/company/10436117/" target="_blank" class="btn btn-light">
+                        <i class="fa fa-linkedin"></i>
+                        Visit our profile
+                    </a>
+                </div>
+                <?php endif ?>
             </div>
 
             <div class="row">
