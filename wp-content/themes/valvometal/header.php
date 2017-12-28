@@ -63,7 +63,7 @@ if ($backgrounds || get_the_post_thumbnail_url()) {
         <p><?= get_bloginfo('description') ?></p>
 
         <div>
-            <a class="btn btn-primary" href="/">Lorem ipsum</a>
+            <a class="btn btn-primary" href="/company/">Our Company</a>
         </div>
     <?php else : ?>
         <ol class="breadcrumb">
