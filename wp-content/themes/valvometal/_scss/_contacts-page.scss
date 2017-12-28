@@ -6,7 +6,7 @@
 
   h2 {
     margin-top: 100px;
-    margin-bottom: 50px;
+    // margin-bottom: 50px;
 
     color: map_get($theme-colors, primary);
     font-size: 1.5rem;
@@ -80,6 +80,30 @@
   .contacts-page-image {
     @include media-breakpoint-down(md) {
       padding-top: 100%;
+    }
+  }
+
+  .linkedin {
+    background-color: transparent !important;
+
+    padding-top: calc(40px + 100px);
+    padding-left: 0;
+
+    color: map_get($theme-colors, primary);
+    font-size: 1.4rem;
+
+    .btn {
+      border-color: map_get($theme-colors, primary);
+      color: map_get($theme-colors, primary);
+
+      font-family: $font-family-base;
+      font-size: .8rem;
+      padding: .5rem .8rem;
+      letter-spacing: .5px;
+
+      i {
+        font-size: 1.1rem;
+      }
     }
   }
 }
