@@ -15,7 +15,7 @@ $images = get_field('gallery');
 
                     <div class="product-gallery">
                         <?php foreach ($images as $image) : ?>
-                        <a href="<?= $image['url'] ?>"><img src="<?= $image['url'] ?>"></a>
+                        <a href="<?= $image['url'] ?>"data-sub-html=""><img src="<?= $image['url'] ?>"></a>
                         <?php endforeach ?>
                     </div>
                 </div>
