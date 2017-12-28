@@ -10,6 +10,7 @@ import './_backgrounds';
 import './_maps';
 import './_scroll';
 import './_certifications';
+import './_references';
 import './_product';
 import './_news';
 import './_testing';

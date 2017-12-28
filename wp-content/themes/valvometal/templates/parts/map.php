@@ -4,6 +4,21 @@ $referencesPage = get_page_by_path('references');
 
 $customers = get_field('customers', $referencesPage);
 
+$names = array_unique(array_map(function ($customer) {
+    return $customer['name'];
+}, $customers));
+sort($names);
+
+$sites = array_unique(array_map(function ($customer) {
+    return $customer['site_name'];
+}, $customers));
+sort($sites);
+
+$nations = array_unique(array_map(function ($customer) {
+    return $customer['nation'];
+}, $customers));
+sort($nations);
+
 ?>
 
 <script type="text/javascript">
@@ -23,40 +38,69 @@ $customers = get_field('customers', $referencesPage);
     ];
 </script>
 
+<div class="map_filters-container">
+    <div class="container">
+        <div class="row">
+            <div class="col col-md-3">
+                <label for="map_filter_customer">Customer</label>
+                <select id="map_filter_customer">
+                    <option value="" selected>View All</option>
+                    <?php foreach ($names as $name) : ?>
+                        <option value="<?= $name ?>"><?= $name ?></option>
+                    <?php endforeach ?>
+                </select>
+            </div>
+
+            <div class="col col-md-3">
+                <label for="map_filter_site">Site</label>
+                <select id="map_filter_site">
+                    <option value="" selected>View All</option>
+                    <?php foreach ($sites as $site) : ?>
+                        <option value="<?= $site ?>"><?= $site ?></option>
+                    <?php endforeach ?>
+                </select>
+            </div>
+
+            <div class="col col-md-3">
+                <label for="map_filter_nation">Nation</label>
+                <select id="map_filter_nation">
+                    <option value="" selected>View All</option>
+                    <?php foreach ($nations as $nation) : ?>
+                        <option value="<?= $nation ?>"><?= $nation ?></option>
+                    <?php endforeach ?>
+                </select>
+            </div>
+
+            <div class="col col-md-3">
+                <button class="map_filter_apply btn btn-block btn-light">Apply filters</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div id="map" class="container-fluid"></div>
 
 <?php
 
-array_splice($customers, 0, 8);
+shuffle($customers);
+$customers = array_slice($customers, 0, 8);
 
 $numCustomers = count($customers);
 $customersPerPage = 4;
 $numPages = ceil($numCustomers / $customersPerPage);
 
-shuffle($customers);
-
 ?>
 
 <div class="customers_on_map-container">
-    <div id="customer_on_map-carousel" class="container carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <?php for ($i = 0; $i < $numPages; $i += 1) : ?>
-                <li data-target="#customer_on_map-carousel" data-slide-to="<?= $i ?>" <?= $i === 0 ? 'class="active"' : '' ?>></li>
-            <?php endfor ?>
-        </ol>
+    <h2>Some Customers</h2>
 
-        <div class="carousel-inner">
-            <?php for ($i = 0; $i < $numPages; $i += 1) : ?>
-                <div class="carousel-item <?= $i === 0 ? 'active' : '' ?>">
-                    <div class="row">
-                    <?php for ($j = $i * $customersPerPage; $j < ($i + 1) * $customersPerPage && $j < count($customersRandom); $j += 1) : ?>
-                        <div class="col-md-<?= 12 / $customersPerPage ?> customer_logo" data-marker-index="<?= $j ?>">
-                            <img src="<?= wp_get_attachment_image_url($customersRandom[$j]['image'], 'half') ?>">
-                        </div>
-                    <?php endfor ?>
-                    </div>
+    <div id="customer_on_map-carousel" class="container">
+        <div class="some_customers" data-slick='{"slidesToShow": <?= $customersPerPage ?>, "arrows": false, "dots": true}'>
+            <?php foreach ($customers as $customer) : ?>
+                <div class="some_customer">
+                    <img src="<?= wp_get_attachment_image_url($customer['image'], 'half') ?>">
                 </div>
-            <?php endfor ?>
+            <?php endforeach ?>
         </div>
     </div>
 </div>
