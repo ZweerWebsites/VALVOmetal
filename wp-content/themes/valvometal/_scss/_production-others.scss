@@ -38,28 +38,37 @@
     font-weight: 500;
   }
 
-  .row + .row {
-    position: relative;
-    z-index: 3;
+  .row {
+    margin-bottom: 2rem;
 
-    .col-6,
-    .col-md-6 {
-      &:first-child {
-        padding-left: 0;
-        padding-right: 0;
+    &:first-child,
+    &:last-child {
+      margin-bottom: 0;
+    }
 
-        background-position: center;
-        background-size: cover;
+    + .row {
+      position: relative;
+      z-index: 3;
 
-        @include media-breakpoint-down(md) {
-          padding-top: 25%;
+      .col-6,
+      .col-md-6 {
+        &:first-child {
+          padding-left: 0;
+          padding-right: 0;
+
+          background-position: center;
+          background-size: cover;
+
+          @include media-breakpoint-down(md) {
+            padding-top: 25%;
+          }
         }
-      }
 
-      + .col-6,
-      + .col-md-6 {
-        background-color: map_get($grays, 100);
-        padding: 2.5rem;
+        + .col-6,
+        + .col-md-6 {
+          background-color: map_get($grays, 100);
+          padding: 2.5rem;
+        }
       }
     }
   }
