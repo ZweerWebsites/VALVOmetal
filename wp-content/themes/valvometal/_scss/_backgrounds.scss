@@ -32,6 +32,13 @@
 
       background-color: $black;
 
+      .page-template-customers &,
+      .page-template-news &,
+      .page-template-contacts & {
+        background-color: $white;
+      }
+
+
       opacity: .5;
     }
 
