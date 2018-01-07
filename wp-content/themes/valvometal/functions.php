@@ -30,10 +30,26 @@ define('VM_CURRENT_URI', $current_uri);
  */
 $directoryPath = __DIR__ . '/inc';
 $directoryPointer = opendir($directoryPath);
+
 while ($fileName = readdir($directoryPointer)) {
     $filePath = $directoryPath . DIRECTORY_SEPARATOR . $fileName;
     $extension = substr(strstr($fileName, '.'), 1);
+
     if (!is_dir($filePath) and $extension === 'php') {
         require_once $filePath;
     }
 }
+
+$directoryPath = __DIR__ . '/plugins';
+$directoryPointer = opendir($directoryPath);
+
+while ($dirName = readdir($directoryPointer)) {
+    $dirPath = $directoryPath . DIRECTORY_SEPARATOR . $dirName;
+
+    if (is_dir($dirPath) and $dirName !== '.' and $dirName !== '..') {
+        $filePath = $dirPath . DIRECTORY_SEPARATOR . 'plugin.php';
+
+        require_once $filePath;
+    }
+}
+
