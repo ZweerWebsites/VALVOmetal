@@ -21,12 +21,22 @@
 
     transition: .8s;
 
-    &.active {
-      opacity: .5;
+    &:before {
+      content: "";
 
-      .page-template-customers & {
-        opacity: 1;
-      }
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      background-color: $black;
+
+      opacity: .5;
+    }
+
+    &.active {
+      opacity: 1;
     }
   }
 }
