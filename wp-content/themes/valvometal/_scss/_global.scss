@@ -4,7 +4,8 @@
 body {
   &.page-template-customers,
   &.page-template-news,
-  &.page-template-contacts {
+  &.page-template-contacts,
+  &.page-template-products {
     background-color: $white;
   }
 }
