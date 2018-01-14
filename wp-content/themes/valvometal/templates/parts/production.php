@@ -32,9 +32,9 @@ $menuPages = wp_get_nav_menu_items('main-menu');
                         <?php endif ?>
 
                         <?php if ($productionPage->ID === $thisPage->ID) : ?>
-                            <figure>
+                            <a href="<?= $menuPage->url ?>"><figure>
                                 <?php the_retina_image(get_post_thumbnail_id($menuPage->object_id), ['class' => 'mx-auto d-block img-fluid']) ?>
-                            </figure>
+								</figure></a>
                         <?php endif ?>
 
                         <h4 class="card-title">
