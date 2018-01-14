@@ -27,7 +27,7 @@ $(() => {
 
     const $navbar = $('.navbar');
     const $header = $('header');
-    const $production = $('.production-container');
+    const $production = $('header + .production-container');
 
     function recalcBackgroundHeight() {
       const navbarHeight = $navbar.outerHeight(true);

@@ -17,6 +17,19 @@
   .certifications {
     background: $white;
     box-shadow: 0 20px 100px 0 rgba($black, .1);
+
+    .slick-track {
+      display: flex;
+    }
+
+    .slick-slide {
+      height: auto;
+      background-color: $white;
+
+      &:nth-child(2n) {
+        background-color: map_get($grays, 100);
+      }
+    }
   }
 
   .certification {

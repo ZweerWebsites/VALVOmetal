@@ -29,8 +29,10 @@ if ($isNews) {
                             return $cat->name;
                         }, $categories));
 
+                        $attachmentId = get_post_thumbnail_id($newsPost);
+
                         ?>
-                        <div class="card">
+                        <div class="card" style="background-image: url('<?= wp_get_attachment_image_url($attachmentId, 'full_size') ?>');">
                             <div class="card-body">
                                 <?php if ($isNews) : ?>
                                 <a href="<?= get_permalink($newsPost) ?>" class="prev-next <?= $index === 0 ? 'prev' : 'next' ?>">

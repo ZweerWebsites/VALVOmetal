@@ -12,8 +12,9 @@ $news = get_posts([
     <div class="container">
         <div class="card-columns">
             <?php foreach ($news as $new) : ?>
+                <?php $categories = array_map(function ($category) { return $category->name; }, get_the_terms($new, 'news_category')) ?>
                 <div class="card">
-                    <small>Categoria</small>
+                    <small><?= implode(' - ', $categories) ?></small>
 
                     <?php if ($attachmentId = get_post_thumbnail_id($new)) : ?>
                         <a href="<?= get_permalink($new) ?>">

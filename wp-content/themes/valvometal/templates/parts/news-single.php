@@ -32,7 +32,7 @@ $categories = array_map(function ($category) { return $category->name; }, get_th
 
                             case 'images':
                                 foreach ($template['images'] as $image) {
-                                    ?><a href="<?= $image['url'] ?>" data-lity><?php
+                                    ?><a href="<?= $image['url'] ?>"><?php
                                     the_retina_image($image['id'], ['class' => 'img-thumbnail col-3']);
                                     ?></a><?php
                                 }
