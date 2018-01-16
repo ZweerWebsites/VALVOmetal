@@ -49,8 +49,8 @@ class ValvoMetal_Plugin_References extends ValvoMetal_Plugin {
                 preg_match('/@(.*),(.*),(.*)z/', $coords, $matches);
 
                 if (count($matches) > 0) {
-                    $lon = $matches[1];
-                    $lat = $matches[2];
+                    $lat = $matches[1];
+                    $lon = $matches[2];
 
                     array_push($field, [
                         'name' => $customer,
