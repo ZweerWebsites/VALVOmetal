@@ -26,10 +26,10 @@ sort($nations);
       <?php foreach ($customers as $index => $customer) : ?>
       {
         index: <?= $index ?>,
-        name: '<?= $customer['name'] ?>',
-        site_name: '<?= $customer['site_name'] ?>',
-        build_year: '<?= $customer['build_year'] ?>',
-        nation: '<?= $customer['nation'] ?>',
+        name: '<?= str_replace('\\"', '"', addslashes($customer['name'])) ?>',
+        site_name: '<?= str_replace('\\"', '"', addslashes($customer['site_name'])) ?>',
+        build_year: '<?= str_replace('\\"', '"', addslashes($customer['build_year'])) ?>',
+        nation: '<?= str_replace('\\"', '"', addslashes($customer['nation'])) ?>',
         image: '<?= wp_get_attachment_image_url($customer['image'], 'half') ?>',
         lat: <?= $customer['lat'] ?>,
         lng: <?= $customer['lon'] ?>,
