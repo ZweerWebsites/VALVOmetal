@@ -32,7 +32,7 @@ sort($nations);
         nation: '<?= $customer['nation'] ?>',
         image: '<?= wp_get_attachment_image_url($customer['image'], 'half') ?>',
         lat: <?= $customer['lat'] ?>,
-        lng: <?= $customer['lng'] ?>,
+        lng: <?= $customer['lon'] ?>,
       },
       <?php endforeach ?>
     ];
