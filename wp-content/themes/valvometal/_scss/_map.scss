@@ -85,15 +85,34 @@
 
   .some_customers {
     box-shadow: 0 20px 100px 0 rgba($black, .1);
+
+    img {
+      max-height: 100%;
+      max-width: 100%;
+    }
+  }
+
+
+
+  .slick-track {
+    display: flex;
   }
 
   .slick-slide {
+    height: auto;
     background-color: $white;
-    &:nth-child(2n+1) {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    &:nth-child(2n) {
       background-color: map_get($grays, 100);
     }
 
-    // cursor: pointer;
+    > div {
+      display: flex;
+      align-items: center;
+    }
 
     img {
       display: block;
