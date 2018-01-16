@@ -239,10 +239,10 @@
                     "mime_types": ""
                 },
                 {
-                    "key": "field_59aef265fdbbd",
-                    "label": "Posizione",
-                    "name": "location",
-                    "type": "google_map",
+                    "key": "field_5a5e813507c69",
+                    "label": "Latitudine",
+                    "name": "lat",
+                    "type": "number",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -251,10 +251,34 @@
                         "class": "",
                         "id": ""
                     },
-                    "center_lat": "44.3987165",
-                    "center_lng": "7.9497621",
-                    "zoom": 5,
-                    "height": ""
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": ""
+                },
+                {
+                    "key": "field_5a5e813d07c6a",
+                    "label": "Longitudine",
+                    "name": "lon",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": ""
                 }
             ]
         }
@@ -276,5 +300,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1505663258
+    "modified": 1516143044
 }
