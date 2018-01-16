@@ -58,10 +58,8 @@ class ValvoMetal_Plugin_References extends ValvoMetal_Plugin {
                         'build_year' => $year,
                         'nation' => $country,
                         'image' => $image,
-                        'location' => [
-                            'lat' => $lat,
-                            'lon' => $lon,
-                        ],
+                        'lat' => $lat,
+                        'lon' => $lon,
                     ]);
                 } else {
                     var_dump($i);

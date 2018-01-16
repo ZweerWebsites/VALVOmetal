@@ -31,8 +31,8 @@ sort($nations);
         build_year: '<?= $customer['build_year'] ?>',
         nation: '<?= $customer['nation'] ?>',
         image: '<?= wp_get_attachment_image_url($customer['image'], 'half') ?>',
-        lat: <?= $customer['location']['lat'] ?>,
-        lng: <?= $customer['location']['lng'] ?>,
+        lat: <?= $customer['lat'] ?>,
+        lng: <?= $customer['lng'] ?>,
       },
       <?php endforeach ?>
     ];
