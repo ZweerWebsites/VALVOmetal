@@ -38,8 +38,15 @@
   }
 
   .marker-image {
-    margin-left: 3rem;
+    max-width: 120px;
   }
+}
+
+.marker-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 .map_filters-container {
