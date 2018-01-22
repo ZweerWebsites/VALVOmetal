@@ -16,6 +16,10 @@
     &:nth-child(2n) {
       background-color: map_get($grays, 100);
     }
+
+    img {
+      max-width: 100%;
+    }
   }
 
   .card-title {
