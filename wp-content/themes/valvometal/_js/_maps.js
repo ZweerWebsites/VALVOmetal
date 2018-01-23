@@ -56,6 +56,8 @@ function initReferencesMap() {
       markers[customer.index] = marker;
     });
 
+    const markerCluster = new MarkerCluster(map, Object.values(markers));
+
     const $filterCustomer = $('#map_filter_customer');
     const $filterSite = $('#map_filter_site');
     const $filterNation = $('#map_filter_nation');
