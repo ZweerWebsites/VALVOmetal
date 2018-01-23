@@ -56,7 +56,9 @@ function initReferencesMap() {
       markers[customer.index] = marker;
     });
 
-    const markerCluster = new window.MarkerClusterer(map, Object.values(markers));
+    const markerCluster = new window.MarkerClusterer(map, Object.values(markers), {
+      imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m',
+    });
 
     const $filterCustomer = $('#map_filter_customer');
     const $filterSite = $('#map_filter_site');
