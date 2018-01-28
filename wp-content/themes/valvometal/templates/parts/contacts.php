@@ -9,7 +9,7 @@ $menuPages = wp_get_nav_menu_items('main-menu');
 
 <div class="contacts-container">
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row">
             <div class="col-md-4 col-7">
                 <div class="row justify-content-center">
                     <div class="col-md-6 col-7">

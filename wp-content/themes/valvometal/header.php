@@ -79,7 +79,9 @@ if ($backgrounds || get_the_post_thumbnail_url()) {
         </ol>
 
         <h1><?= is_404() ? get_field('404-title', 'option') : get_the_title() ?></h1>
-        <?php is_404() ? the_field('404-content', 'option') : the_content() ?>
+        <?php if (get_page_template_slug() !== 'templates/privacy.php') : ?>
+            <?php is_404() ? the_field('404-content', 'option') : the_content() ?>
+        <?php endif ?>
 
         <?php if ($photogalley = get_field('photogallery')) : ?>
             <div class="photogallery">

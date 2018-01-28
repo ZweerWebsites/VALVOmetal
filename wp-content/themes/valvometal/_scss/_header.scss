@@ -39,7 +39,8 @@ header {
   color: $white;
   .page-template-customers &,
   .page-template-news &,
-  .page-template-contacts & {
+  .page-template-contacts &,
+  .page-template-privacy & {
     color: map_get($theme-colors, primary);
   }
 
@@ -55,6 +56,10 @@ header {
   .single-news &,
   .page-template-product & {
     margin-bottom: 100px;
+  }
+
+  .page-template-contacts & {
+    margin-bottom: 200px;
   }
 
   > * {
