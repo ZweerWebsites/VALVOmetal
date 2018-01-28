@@ -25,6 +25,11 @@
     padding-top: 250px;
   }
 
+  .page-template-privacy & {
+    margin-top: -130px;
+    padding-top: 150px;
+  }
+
   .col-newsletter {
     @include media-breakpoint-up(md) {
       padding-bottom: 100px;
@@ -89,8 +94,6 @@
   .mc4wp-form-fields {
     .row {
       &:first-child {
-        margin-bottom: 2rem;
-
         @include media-breakpoint-up(sm) {
           > div {
             margin-left: 0;
@@ -108,6 +111,10 @@
               margin-right: 0;
             }
           }
+        }
+
+        + .row {
+          margin-bottom: 2rem;
         }
       }
     }
