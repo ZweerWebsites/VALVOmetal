@@ -43,6 +43,18 @@ if (@$_SERVER['SERVER_NAME'] === 'valvometal.loc' || @$_SERVER['PATH_TRANSLATED'
 
     /** MySQL hostname */
     define( 'DB_HOST', 'localhost' );
+} else if (@$_SERVER['CONTEXT_DOCUMENT_ROOT'] === '/www/MW_qcccIPGaq/sitindustrievalvometal.com' || @$_SERVER['SERVER_NAME'] === 'sitindustrievalvometal.com') {
+    /** The name of the database for WordPress */
+    define('DB_NAME', 'valvometal_olivieriachille_com');
+
+    /** MySQL database username */
+    define('DB_USER', 'valvomLinfE0a6BY');
+
+    /** MySQL database password */
+    define('DB_PASSWORD', 'yEbdWln4z5ABRK1');
+
+    /** MySQL hostname */
+    define( 'DB_HOST', 'valvometal.olivieriachille.com' );
 } else {
     /** The name of the database for WordPress */
     define( 'DB_NAME', 'id2807975_valvometal' );
