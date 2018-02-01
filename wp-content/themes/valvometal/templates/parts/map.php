@@ -4,6 +4,20 @@ $referencesPage = get_page_by_path('references');
 
 $customers = get_field('customers', $referencesPage);
 
+echo '<!-- Customers: ' . count($customers) . ' -->' . "\n";
+
+usort($customers, function ($a, $b) {
+    if ($a['lat'] === $b['lat']) {
+        if ($a['lon'] === $b['lon']) {
+            echo '<!-- ' . $a['name'] . ' -->' . "\n";
+        }
+
+        return $a['lon'] < $b['lon'] ? 1 : -1;
+    }
+
+    return $a['lat'] < $b['lat'] ? 1 : -1;
+});
+
 $names = array_unique(array_map(function ($customer) {
     return $customer['name'];
 }, $customers));
