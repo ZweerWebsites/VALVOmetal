@@ -9,7 +9,7 @@ echo '<!-- Customers: ' . count($customers) . ' -->' . "\n";
 usort($customers, function ($a, $b) {
     if ($a['lat'] === $b['lat']) {
         if ($a['lon'] === $b['lon']) {
-            echo '<!-- ' . $a['name'] . ' -->' . "\n";
+            echo '<!-- ' . $a['name'] . ' / ' . $b['name'] . ' -->' . "\n";
         }
 
         return $a['lon'] < $b['lon'] ? 1 : -1;
