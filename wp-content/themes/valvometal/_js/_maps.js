@@ -70,6 +70,8 @@ function initReferencesMap() {
       const filterSite = $filterSite.val();
       const filterNation = $filterNation.val();
 
+      const filteredMarkers = [];
+
       Object.values(markers).forEach((marker) => {
         const {
           name,
@@ -77,8 +79,17 @@ function initReferencesMap() {
           nation,
         } = marker.customerInfo;
 
-        marker.setVisible((filterCustomer === '' || filterCustomer === name) && (filterSite === '' || filterSite === site_name) && (filterNation === '' || filterNation === nation));
+        const isVisible = (filterCustomer === '' || filterCustomer === name) && (filterSite === '' || filterSite === site_name) && (filterNation === '' || filterNation === nation);
+
+        marker.setVisible(isVisible);
+
+        if (isVisible) {
+          filteredMarkers.push(marker);
+        }
       });
+
+      markerCluster.clearMarkers();
+      markerCluster.addMarkers(filteredMarkers);
     });
 
     if (false) {

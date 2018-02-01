@@ -1,7 +1,13 @@
 @import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/breakpoints";
 
 .quality_assurance-container {
   background-color: $white;
+
+  padding-top: 150px;
+  @include media-breakpoint-up(lg) {
+    padding-top: 0;
+  }
 
   h2,
   h3 {

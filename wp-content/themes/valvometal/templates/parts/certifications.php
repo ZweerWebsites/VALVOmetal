@@ -10,7 +10,7 @@ $slidesToShow = 3;
         <div class="certifications" data-slick='{"slidesToShow": <?= $slidesToShow ?>, "arrows": false, "dots": true, "infinite": false}'>
             <?php foreach ($certifications as $certification) : ?>
             <div class="certification">
-                <i class="fa fa-file-text-o"></i>
+                <i class="fa fa-file-text-o d-none d-md-inline-block"></i>
 
                 <h4><?= $certification['category'] ?></h4>
                 <p><?= $certification['name'] ?></p>

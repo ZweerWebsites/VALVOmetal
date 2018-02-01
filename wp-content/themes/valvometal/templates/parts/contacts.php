@@ -10,9 +10,9 @@ $menuPages = wp_get_nav_menu_items('main-menu');
 <div class="contacts-container">
     <div class="container">
         <div class="row">
-            <div class="col-md-4 col-7">
+            <div class="col-md-4 col-lg-7">
                 <div class="row justify-content-center">
-                    <div class="col-md-6 col-7">
+                    <div class="col-7 col-md-6">
                         <h3><strong>Valvometal</strong></h3>
 
                         <ul class="list-unstyled">
@@ -24,7 +24,7 @@ $menuPages = wp_get_nav_menu_items('main-menu');
                         </ul>
                     </div>
 
-                    <div class="col-md-6 col-7">
+                    <div class="col-7 col-md-6">
                         <h3><strong><?= get_the_title($productionPage) ?></strong></h3>
 
                         <ul class="list-unstyled">
@@ -37,7 +37,7 @@ $menuPages = wp_get_nav_menu_items('main-menu');
                 </div>
             </div>
 
-            <div class="col-md-4 col-7">
+            <div class="col-md-4 col-lg-7">
                 <h3><strong><?= get_the_title($contactsPage) ?></strong></h3>
 
                 <p><?= get_the_excerpt($contactsPage) ?></p>

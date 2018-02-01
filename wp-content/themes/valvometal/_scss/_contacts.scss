@@ -26,6 +26,12 @@
         }
 
         text-align: center;
+
+        + div {
+          @include media-breakpoint-down(sm) {
+            text-align: center;
+          }
+        }
       }
     }
   }

@@ -43,13 +43,13 @@ if ($backgrounds || get_the_post_thumbnail_url()) {
         <?php the_retina_image($logoDarkId) ?>
     </a>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkupFloat" aria-controls="navbarNavAltMarkupFloat" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <?php wp_nav_menu([
         'menu' => 'main-menu',
         'container' => 'div',
-        'container_id' => 'navbarNavAltMarkup',
+        'container_id' => 'navbarNavAltMarkupFloat',
         'container_class' => 'collapse navbar-collapse align-self-center',
         'menu_class' => 'navbar-nav ml-auto',
         'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback',

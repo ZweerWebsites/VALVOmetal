@@ -59,6 +59,9 @@
 
   h3 {
     width: 35%;
+    @include media-breakpoint-down(md) {
+      width: auto;
+    }
     .page-template-product & {
       width: 75%;
     }
