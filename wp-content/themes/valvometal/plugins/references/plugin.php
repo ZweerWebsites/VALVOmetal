@@ -32,7 +32,7 @@ class ValvoMetal_Plugin_References extends ValvoMetal_Plugin {
             for ($i = 0; $i < count($rows); $i += 1) {
                 # YEAR;CUSTOMER;PLANT;COUNTRY;NOME LOGO;COORDINATE
 
-                list($year, $customer, $plant, $country, $logo, $lon, $lat) = explode(';', $rows[$i]);
+                list($year, $customer, $plant, $country, $logo, $lat, $lon) = explode(';', $rows[$i]);
 
                 $attachment = new WP_Query([
                     'posts_per_page' => 1,
