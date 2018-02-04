@@ -29,10 +29,10 @@ class ValvoMetal_Plugin_References extends ValvoMetal_Plugin {
 
             $field = [];
 
-            for ($i = 1; $i < count($rows); $i += 1) {
+            for ($i = 0; $i < count($rows); $i += 1) {
                 # YEAR;CUSTOMER;PLANT;COUNTRY;NOME LOGO;COORDINATE
 
-                list($year, $customer, $plant, $country, $logo, $coords) = explode(';', $rows[$i]);
+                list($year, $customer, $plant, $country, $logo, $lon, $lat) = explode(';', $rows[$i]);
 
                 $attachment = new WP_Query([
                     'posts_per_page' => 1,
@@ -46,26 +46,18 @@ class ValvoMetal_Plugin_References extends ValvoMetal_Plugin {
                     $image = $attachment->posts[0]->ID;
                 }
 
-                preg_match('/@(.*),(.*),(.*)z/', $coords, $matches);
-
-                if (count($matches) > 0) {
-                    $lat = $matches[1];
-                    $lon = $matches[2];
-
-                    array_push($field, [
-                        'name' => $customer,
-                        'site_name' => $plant,
-                        'build_year' => $year,
-                        'nation' => $country,
-                        'image' => $image,
-                        'lat' => $lat,
-                        'lon' => $lon,
-                    ]);
-                } else {
-                    var_dump($i);
-                    var_dump($coords);
-                }
+                array_push($field, [
+                    'name' => $customer,
+                    'site_name' => $plant,
+                    'build_year' => $year,
+                    'nation' => $country,
+                    'image' => $image,
+                    'lat' => $lat,
+                    'lon' => $lon,
+                ]);
             }
+
+            var_dump(count($field));
 
             update_field('customers', $field, get_page_by_path('references'));
         }
