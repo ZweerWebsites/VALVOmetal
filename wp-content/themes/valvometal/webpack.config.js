@@ -16,6 +16,9 @@ module.exports = {
       'slick-carousel',
       'lightgallery',
       'jquery-sticky',
+      'leaflet',
+      'leaflet.markercluster',
+      'leaflet.gridlayer.googlemutant',
     ],
   },
 

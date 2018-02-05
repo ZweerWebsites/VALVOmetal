@@ -1,4 +1,15 @@
 import $ from 'jquery';
+import L  from 'leaflet';
+import 'leaflet.markercluster';
+import 'leaflet.gridlayer.googlemutant';
+
+// delete L.Icon.Default.prototype._getIconUrl;
+
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
+  iconUrl: require('leaflet/dist/images/marker-icon.png'),
+  shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
+});
 
 const zoom = 4;
 const center = {
@@ -10,8 +21,83 @@ const icon = {
   url: `${baseUrl}/img/marker.svg`,
 };
 
-
 function initReferencesMap() {
+  const $map = $('#map');
+
+  if ($map.length > 0) {
+    const height = $(window).height();
+
+    $map.css('height', height);
+
+    const googleLayer = L.gridLayer.googleMutant({
+      type: 'roadmap',
+      styles,
+    });
+
+    const map = L.map('map', {
+      center: new L.LatLng(center.lat, center.lng),
+      zoom,
+      layers: [googleLayer],
+    });
+
+    const markers = [];
+    const markerCluster = new L.MarkerClusterGroup().addTo(map);
+    const $infoBaseContent = $('<div class="marker row"><div class="col"><h3></h3><ul class="list-unstyled"><li class="marker-site_name">NOME IMPIANTO: <strong></strong></li><li class="marker-build_year">ANNO DI COSTRUZIONE: <strong></strong></li><li class="marker-nation">PAESE: <strong></strong></li></ul></div><div class="col"><div class="marker-image-container"><img class="marker-image"></div></div></div>');
+
+    customers.forEach((customer) => {
+      const marker = new L.Marker(new L.LatLng(customer.lng, customer.lat), {
+        title: customer.name,
+      }).addTo(markerCluster);
+
+      const $infoContent = $infoBaseContent.clone();
+      $infoContent.find('h3').text(customer.name);
+      $infoContent.find('.marker-site_name strong').text(customer.site_name);
+      $infoContent.find('.marker-build_year strong').text(customer.build_year);
+      $infoContent.find('.marker-nation strong').text(customer.nation);
+      $infoContent.find('.marker-image').attr('src', customer.image);
+
+      const popup = new L.Popup({
+        maxWidth: 800,
+      })
+        .setContent($infoContent.get(0).outerHTML);
+
+      marker.bindPopup(popup);
+      marker.customerInfo = customer;
+
+      markers.push(marker);
+    });
+
+    const $filterCustomer = $('#map_filter_customer');
+    const $filterSite = $('#map_filter_site');
+    const $filterNation = $('#map_filter_nation');
+    const $filterApply = $('.map_filter_apply');
+
+    $filterApply.click(() => {
+      const filterCustomer = $filterCustomer.val();
+      const filterSite = $filterSite.val();
+      const filterNation = $filterNation.val();
+
+      markers.forEach((marker) => {
+        const {
+          name,
+          site_name,
+          nation,
+        } = marker.customerInfo;
+
+        const isVisible = (filterCustomer === '' || filterCustomer === name) && (filterSite === '' || filterSite === site_name) && (filterNation === '' || filterNation === nation);
+
+        if (isVisible) {
+          marker.addTo(markerCluster);
+        } else {
+          marker.remove();
+        }
+      });
+    });
+
+  }
+}
+
+function initReferencesMap2() {
   const $map = $('#map');
 
   if ($map.length > 0) {
@@ -57,8 +143,12 @@ function initReferencesMap() {
       markers[customer.index] = marker;
     });
 
+    var oms = new OverlappingMarkerSpiderfier(map,
+      {markersWontMove: true, markersWontHide: true});
+
     const markerCluster = new window.MarkerClusterer(map, Object.values(markers), {
       imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m',
+      maxZoom: 14,
     });
 
     const $filterCustomer = $('#map_filter_customer');

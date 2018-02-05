@@ -1,11 +1,18 @@
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins/breakpoints";
 
+#map {
+  overflow: auto;
+}
+
 .marker {
   position: relative;
   padding: .5rem;
 
   min-width: 200px;
+  @include media-breakpoint-up(lg) {
+    min-width: 600px;
+  }
 
   &:before {
     content: "";
