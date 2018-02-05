@@ -45,7 +45,7 @@ function initReferencesMap() {
     const $infoBaseContent = $('<div class="marker row"><div class="col"><h3></h3><ul class="list-unstyled"><li class="marker-site_name">NOME IMPIANTO: <strong></strong></li><li class="marker-build_year">ANNO DI COSTRUZIONE: <strong></strong></li><li class="marker-nation">PAESE: <strong></strong></li></ul></div><div class="col"><div class="marker-image-container"><img class="marker-image"></div></div></div>');
 
     customers.forEach((customer) => {
-      const marker = new L.Marker(new L.LatLng(customer.lng, customer.lat), {
+      const marker = new L.Marker(new L.LatLng(customer.lat, customer.lng), {
         title: customer.name,
       }).addTo(markerCluster);
 
