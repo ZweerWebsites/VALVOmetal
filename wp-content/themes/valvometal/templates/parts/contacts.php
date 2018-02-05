@@ -37,7 +37,7 @@ $menuPages = wp_get_nav_menu_items('main-menu');
                 </div>
             </div>
 
-            <div class="col-md-4 col-lg-7">
+            <div class="col-md-4">
                 <h3><strong><?= get_the_title($contactsPage) ?></strong></h3>
 
                 <p><?= get_the_excerpt($contactsPage) ?></p>
