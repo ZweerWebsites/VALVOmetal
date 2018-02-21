@@ -25,15 +25,15 @@ add_action('wp_enqueue_scripts', function () {
         $version = random_int(0, 999999);
     }
 
+    $googleMapsApiKey = apply_filters('acf/settings/google_api_key', '');
+    wp_enqueue_script('google_maps_markercluster', 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js', array(), $version, true);
+    wp_enqueue_script('google_maps_overlapping', 'https://cdnjs.cloudflare.com/ajax/libs/OverlappingMarkerSpiderfier/1.0.3/oms.min.js', array(), $version, true);
+    wp_enqueue_script('google_maps', 'https://maps.googleapis.com/maps/api/js?key=' . $googleMapsApiKey, array(), $version, true);
+
     wp_enqueue_script('manifest', WP_THEME_URI . '/dist/js/manifest.js', array(), $version, true );
     wp_enqueue_script('vendor', WP_THEME_URI . '/dist/js/vendor.js', array(), $version, true );
     wp_enqueue_script('main', WP_THEME_URI . '/dist/js/main.js', array(), $version, true );
     wp_enqueue_script('modernizr', WP_THEME_URI . '/dist/js/modernizr-bundle.js', array(), $version, false );
-
-    $googleMapsApiKey = apply_filters('acf/settings/google_api_key', '');
-    wp_enqueue_script('google_maps_markercluster', 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js', array(), $version, true);
-    wp_enqueue_script('google_maps_overlapping', 'https://cdnjs.cloudflare.com/ajax/libs/OverlappingMarkerSpiderfier/1.0.3/oms.min.js', array(), $version, true);
-    wp_enqueue_script('google_maps', 'https://maps.googleapis.com/maps/api/js?key=' . $googleMapsApiKey . '&callback=initMaps', array(), $version, true);
 
     wp_enqueue_style('main', WP_THEME_URI . '/dist/css/main.css', array(), $version );
 

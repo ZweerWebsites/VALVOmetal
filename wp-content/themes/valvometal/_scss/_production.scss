@@ -40,6 +40,18 @@
     .page-template-products & {
       box-shadow: none;
     }
+
+    .card-body {
+      position: relative;
+
+      padding-bottom: 6rem;
+
+      .btn {
+        position: absolute;
+        bottom: 1rem;
+        left: 2rem;
+      }
+    }
   }
 
   .card {

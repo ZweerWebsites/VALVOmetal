@@ -67,12 +67,23 @@
       font-size: 2.1rem;
 
       margin: 3rem 0 4rem;
+
+      @include media-breakpoint-up(md) {
+        font-size: 1.5rem;
+
+        margin-bottom: 2rem;
+      }
     }
 
     .btn {
       color: map_get($theme-colors, primary);
 
       padding: 10px 30px;
+
+      @include media-breakpoint-up(md) {
+        font-size: .7rem;
+        padding: 5px 10px;
+      }
     }
   }
 }

@@ -37,9 +37,16 @@
 
       padding-top: 400px;
       margin-top: -500px;
+
+      .page-template-product & {
+        margin-bottom: 0;
+
+        padding-top: 422px;
+        margin-top: -522px;
+      }
     }
 
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(sm) {
       padding-bottom: 30px;
     }
 
@@ -47,6 +54,12 @@
       background-color: darken(map_get($theme-colors, primary), 10%);
 
       @include media-breakpoint-down(md) {
+        margin-top: -440px;
+        padding-top: 500px;
+      }
+
+      @include media-breakpoint-down(sm) {
+        margin-top: 0;
         padding-top: 30px;
       }
     }

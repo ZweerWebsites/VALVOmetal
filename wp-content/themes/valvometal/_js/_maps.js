@@ -126,7 +126,7 @@ function initContactsMaps() {
   });
 }
 
-window.initMaps = function initMaps() {
+// window.initMaps = function initMaps() {
   initReferencesMap();
   initContactsMaps();
-};
+// };
