@@ -53,6 +53,10 @@
     + .col-newsletter {
       background-color: darken(map_get($theme-colors, primary), 10%);
 
+      @include media-breakpoint-up(lg) {
+        margin-bottom: -100px;
+      }
+
       @include media-breakpoint-down(md) {
         margin-top: -440px;
         padding-top: 500px;
