@@ -13,7 +13,7 @@
  */
 add_action('wp_enqueue_scripts', function () {
     # Specify the static version
-    $version = '0.0.0';
+    $version = '1.0.0';
 
     # If ACF plugin is loaded and the field exists, use it
     if (function_exists('get_field') and $fieldVersion = get_field('assets-version', 'option')) {
