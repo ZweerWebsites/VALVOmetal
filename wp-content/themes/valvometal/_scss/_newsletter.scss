@@ -55,6 +55,11 @@
 
       @include media-breakpoint-up(lg) {
         margin-bottom: -100px;
+        margin-top: -410px;
+      }
+
+      @include media-breakpoint-up(xl) {
+        margin-top: -522px;
       }
 
       @include media-breakpoint-down(md) {
