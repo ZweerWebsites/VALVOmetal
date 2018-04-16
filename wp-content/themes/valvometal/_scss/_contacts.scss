@@ -6,7 +6,10 @@
   
   padding-top: 30px;
   @include media-breakpoint-up(md) {
-    margin-top: -320px;
+    .customers-container + & {
+      margin-top: -320px;
+    }
+
     .page-template-product & {
       margin-top: 0;
     }
